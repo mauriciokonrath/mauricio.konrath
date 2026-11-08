@@ -2,556 +2,221 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maurício Konrath</title>
-  <meta name="description" content="Engenheiro de Software, pesquisador em IA, PLN e segurança da informação na UFSC." />
+  <meta name="description" content="Maurício Konrath, mestrando em Ciência da Computação na UFSC e engenheiro de software no ON-RCPN. Pesquisa em agentes pessoais de IA representativos, delegação verificável e confiabilidade de classificadores jurídicos." />
   <meta name="author" content="Maurício Konrath" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0d0e0f" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#F5F6F8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0F141D" media="(prefers-color-scheme: dark)" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Maurício Konrath — Engenheiro de Software &amp; Pesquisador" />
-  <meta property="og:description" content="Portfólio de Maurício Konrath com experiência em IA, PLN, segurança da informação e engenharia de software." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Maurício Konrath — Engenheiro de Software &amp; Pesquisador" />
-  <meta name="twitter:description" content="Portfólio de Maurício Konrath com experiência em IA, PLN, segurança da informação e engenharia de software." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0e0f'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-size='24' fill='%23e4e2dd'%3EMK.%3C/text%3E%3C/svg%3E" />
+  <meta property="og:title" content="Maurício Konrath" />
+  <meta property="og:description" content="Mestrando em Ciência da Computação (UFSC) e engenheiro de software no ON-RCPN. Agentes pessoais de IA, delegação verificável e PLN jurídico." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Maurício Konrath" />
+  <meta name="twitter:description" content="Agentes pessoais de IA, delegação verificável e PLN jurídico." />
   <!-- Substitua pelo seu domínio quando publicar -->
   <!-- <link rel="canonical" href="https://seu-dominio.com/" /> -->
   <!-- <meta property="og:url" content="https://seu-dominio.com/" /> -->
-  <!-- <meta property="og:image" content="https://seu-dominio.com/og-cover.jpg" /> -->
-  <!-- <meta name="twitter:image" content="https://seu-dominio.com/og-cover.jpg" /> -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23151B26'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-weight='600' font-size='30' fill='%23F5F6F8'%3EM%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('mk-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <style>
     :root {
-      --bg:         #0d0e0f;
-      --bg-card:    #131416;
-      --bg-hover:   #191b1d;
-      --border:     #1e2022;
-      --border-mid: #2a2d30;
-      --text:       #e4e2dd;
-      --text-muted: #787570;
-      --text-dim:   #434140;
-      --accent:     #8fa8b8;
-      --accent-dim: #3a5568;
-      --mono:       'IBM Plex Mono', monospace;
-      --serif:      'Cormorant Garamond', serif;
-      --sans:       'IBM Plex Sans', sans-serif;
+      --bg: #F5F6F8;
+      --ink: #151B26;
+      --muted: #545F6F;
+      --line: #D9DEE5;
+      --accent: #2B44B5;
+      --ok: #0B7A57;
+      --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+      --header-h: 64px;
+      color-scheme: light;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0F141D; --ink: #E3E7ED; --muted: #9BA6B6; --line: #273145; --accent: #A3B4FF; --ok: #66D1A8;
+        color-scheme: dark;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0F141D; --ink: #E3E7ED; --muted: #9BA6B6; --line: #273145; --accent: #A3B4FF; --ok: #66D1A8;
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      font-weight: 300;
-      line-height: 1.7;
-      overflow-x: hidden;
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: var(--serif); font-size: 1.1875rem; line-height: 1.6;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
     }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.4;
-    }
-    .container { max-width: 920px; margin: 0 auto; padding: 0 2rem; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    a:hover { text-decoration-thickness: 2px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .skip { position: absolute; left: 1rem; top: -100px; z-index: 100; background: var(--ink); color: var(--bg); padding: 0.6rem 0.9rem; text-decoration: none; }
+    .skip:focus { top: 1rem; }
 
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(16px);
-      background: rgba(13,14,15,0.9);
+    /* Cabeçalho */
+    .site-header { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    .site-header.scrolled { border-bottom-color: var(--line); }
+    .bar { display: flex; align-items: center; gap: 1.5rem; height: var(--header-h); }
+    .brand { font-weight: 600; font-size: 1.0625rem; color: var(--ink); text-decoration: none; margin-right: auto; white-space: nowrap; }
+    .nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+    .nav a { color: var(--muted); text-decoration: none; font-size: 1.0625rem; }
+    .nav a:hover, .nav a[aria-current="true"] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); }
+    .tools { display: flex; align-items: center; gap: 0.5rem; }
+    .lang { display: flex; }
+    .lang button {
+      font: inherit; font-size: 1rem; background: none; border: 0; padding: 0.25rem 0.35rem;
+      color: var(--muted); cursor: pointer;
     }
-    nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-      gap: 1rem;
-    }
-    .nav-logo {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; flex: 1; justify-content: center; }
-    .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.63rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-shrink: 0;
-    }
-    .menu-toggle {
-      display: none;
-      width: 40px;
-      height: 36px;
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .menu-toggle span {
-      display: block;
-      width: 14px;
-      height: 1px;
-      background: currentColor;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-    .menu-toggle:hover { border-color: var(--border-mid); background: rgba(255,255,255,0.02); }
-    .menu-toggle.active span:first-child { transform: translateY(2.5px) rotate(45deg); }
-    .menu-toggle.active span:last-child { transform: translateY(-2.5px) rotate(-45deg); }
+    .lang button:hover { color: var(--ink); }
+    .lang button[aria-pressed="true"] { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.25em; }
+    .icon-btn { background: none; border: 0; color: var(--ink); width: 36px; height: 36px; display: inline-grid; place-items: center; cursor: pointer; border-radius: 6px; padding: 0; }
+    .icon-btn:hover { background: color-mix(in srgb, var(--ink) 7%, transparent); }
+    .icon-btn svg { width: 18px; height: 18px; }
+    .menu-btn { display: none; }
 
-    /* LANGUAGE SWITCHER */
-    .lang-switcher {
-      display: flex;
-      gap: 2px;
-      flex-shrink: 0;
+    /* Abertura com a rede de fundo */
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden;
+      padding: clamp(5rem, 12vw, 9rem) 0 clamp(4rem, 9vw, 7rem);
+      border-bottom: 1px solid var(--line);
     }
-    .lang-btn {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      background: none;
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      padding: 0.3rem 0.55rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .lang-btn:hover { border-color: var(--border-mid); color: var(--text-muted); }
-    .lang-btn.active { border-color: var(--accent-dim); color: var(--accent); background: rgba(58,85,104,0.15); }
-
-    /* HERO */
-    #hero {
-      min-height: 100vh;
-      display: grid;
-      align-items: center;
-      padding-top: 56px;
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-    }
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+    .hero > .wrap { position: relative; z-index: 2; }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
       background:
-        radial-gradient(circle at 18% 30%, rgba(143,168,184,0.10), transparent 28%),
-        radial-gradient(circle at 78% 58%, rgba(143,168,184,0.08), transparent 30%),
-        radial-gradient(circle at 50% 40%, rgba(255,255,255,0.03), transparent 35%);
-      pointer-events: none;
-      z-index: 0;
+        linear-gradient(90deg, color-mix(in srgb, var(--bg) 75%, transparent) 0%, transparent 65%),
+        radial-gradient(circle at 60% 45%, transparent 0%, color-mix(in srgb, var(--bg) 85%, transparent) 100%);
     }
-    #hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 45%, rgba(13,14,15,0.12) 0%, rgba(13,14,15,0.54) 58%, rgba(13,14,15,0.85) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-    .hero-network {
-      position: absolute;
-      inset: -2%;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.42;
-      animation: networkDrift 22s ease-in-out infinite alternate;
-    }
-    .hero-network svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-    .network-link,
-    .network-link-soft {
-      fill: none;
-      stroke-linecap: round;
-      vector-effect: non-scaling-stroke;
-    }
-    .network-link {
-      stroke: rgba(255,255,255,0.10);
-      stroke-width: 1.1;
-    }
-    .network-link-soft {
-      stroke: rgba(255,255,255,0.055);
-      stroke-width: 0.8;
-    }
-    .network-node {
-      fill: rgba(255,255,255,0.18);
-    }
-    .network-node.soft {
-      fill: rgba(255,255,255,0.09);
-    }
-    .network-lock {
-      opacity: 0.24;
-    }
-    .network-lock .lock-body {
-      fill: rgba(255,255,255,0.055);
-      stroke: rgba(255,255,255,0.12);
-      stroke-width: 1;
-    }
-    .network-lock .lock-arc {
-      fill: none;
-      stroke: rgba(255,255,255,0.14);
-      stroke-width: 1.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .network-lock .lock-dot {
-      fill: rgba(255,255,255,0.13);
-    }
-    .hero-line { display: none; }
-    .hero-content { position: relative; z-index: 3; padding: 6rem 0 5rem; }
+    .hero-network { position: absolute; inset: -2%; z-index: 0; pointer-events: none; animation: network-drift 22s ease-in-out infinite alternate; }
+    .hero-network svg { width: 100%; height: 100%; display: block; }
+    .net-link { fill: none; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke: color-mix(in srgb, var(--ink) 16%, transparent); stroke-width: 1.1; }
+    .net-link.soft { stroke: color-mix(in srgb, var(--ink) 8%, transparent); stroke-width: 0.8; }
+    .net-node { fill: color-mix(in srgb, var(--ink) 26%, transparent); }
+    .net-node.soft { fill: color-mix(in srgb, var(--ink) 14%, transparent); }
+    .net-lock rect { fill: var(--bg); stroke: color-mix(in srgb, var(--ink) 30%, transparent); stroke-width: 1; }
+    .net-lock path { fill: none; stroke: color-mix(in srgb, var(--ink) 34%, transparent); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+    .net-lock circle { fill: color-mix(in srgb, var(--ink) 34%, transparent); }
+    @keyframes network-drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(-12px, 8px, 0) scale(1.025); } }
 
-    @keyframes networkDrift {
-      from { transform: translate3d(0, 0, 0) scale(1); }
-      to   { transform: translate3d(-10px, 6px, 0) scale(1.02); }
-    }
-    .hero-tag {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    .hero-tag::before {
-      content: '';
-      display: block;
-      width: 1.8rem;
-      height: 1px;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-    h1.hero-name {
-      font-family: var(--serif);
-      font-size: clamp(3.2rem, 8.5vw, 6.2rem);
-      font-weight: 300;
-      line-height: 1.02;
-      letter-spacing: -0.015em;
-      color: var(--text);
-      margin-bottom: 0.2rem;
-    }
-    h1.hero-name em { font-style: italic; color: var(--text-muted); }
-    .hero-role {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      letter-spacing: 0.1em;
-      margin-bottom: 2.75rem;
-    }
-    .hero-bio {
-      max-width: 560px;
-      font-size: 0.93rem;
-      color: var(--text-muted);
-      line-height: 1.85;
-      margin-bottom: 3rem;
-      border-left: 1px solid var(--border-mid);
-      padding-left: 1.5rem;
-    }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border: 1px solid var(--border-mid);
-      color: var(--text-muted);
-      transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .btn:hover { border-color: var(--accent-dim); color: var(--text); background: var(--bg-hover); }
-    .btn.primary { background: var(--accent-dim); border-color: var(--accent-dim); color: var(--text); }
-    .btn.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+    .hero-inner { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .hero-inner.has-photo { grid-template-columns: minmax(0, 1fr) auto; }
+    .photo { margin: 0; }
+    .photo img { display: block; width: clamp(150px, 18vw, 220px); aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); }
+    .hero h1 { font-size: clamp(2.75rem, 6vw, 4.25rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 1.5rem; }
+    .intro { font-size: clamp(1.25rem, 2vw, 1.45rem); line-height: 1.5; max-width: 40rem; margin: 0; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem; list-style: none; margin: 2rem 0 0; padding: 0; font-size: 1.0625rem; }
 
-    /* SECTIONS */
-    section { padding: 5.5rem 0; border-top: 1px solid var(--border); }
-    .section-label {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      margin-bottom: 3rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-    h2.section-title {
-      font-family: var(--serif);
-      font-size: clamp(1.9rem, 4vw, 2.9rem);
-      font-weight: 300;
-      line-height: 1.2;
-      color: var(--text);
-      margin-bottom: 2.75rem;
-    }
+    /* Seções */
+    .sec { padding: clamp(3.5rem, 7vw, 5.5rem) 0; border-bottom: 1px solid var(--line); }
+    .sec:last-of-type { border-bottom: 0; }
+    .sec-grid { display: grid; grid-template-columns: 12rem minmax(0, 44rem); gap: clamp(1.5rem, 5vw, 4rem); }
+    .sec h2 { font-size: 1.375rem; font-weight: 600; line-height: 1.3; margin: 0; }
+    .sec-note { color: var(--muted); font-size: 1rem; margin: 0.35rem 0 0; }
+    .prose p { margin: 0 0 1em; }
+    .prose p:last-child { margin-bottom: 0; }
 
-    /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: start; }
-    .about-text p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.9; }
-    .about-text p strong { color: var(--text); font-weight: 400; }
-    .about-sidebar { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--border); }
-    .stat-card {
-      padding: 1.5rem;
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.2s;
-    }
-    .stat-card:last-child { border-bottom: none; }
-    .stat-card:hover { background: var(--bg-hover); }
-    .stat-number { font-family: var(--serif); font-size: 2.2rem; font-weight: 300; color: var(--text); line-height: 1; margin-bottom: 0.35rem; }
-    .stat-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); line-height: 1.5; }
+    .skills { margin: 2.25rem 0 0; }
+    .skills dt { font-weight: 600; font-size: 1.0625rem; }
+    .skills dd { margin: 0 0 1rem; color: var(--muted); }
+    .skills dd:last-child { margin-bottom: 0; }
 
-    /* EDUCATION */
-    .edu-list { display: flex; flex-direction: column; }
-    .edu-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2.25rem 0; border-bottom: 1px solid var(--border); }
-    .edu-item:last-child { border-bottom: none; }
-    .edu-date { font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.06em; color: var(--text-dim); line-height: 1.6; padding-top: 0.1rem; }
-    .edu-badge {
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-family: var(--mono);
-      font-size: 0.57rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid var(--accent-dim);
-      padding: 0.2rem 0.55rem;
-    }
-    .edu-degree { font-size: 0.96rem; color: var(--text); font-weight: 400; margin-bottom: 0.2rem; }
-    .edu-inst { font-family: var(--mono); font-size: 0.67rem; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.6rem; }
-    .edu-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.75; }
+    .research { list-style: none; margin: 0; padding: 0; }
+    .research li { margin: 0 0 2.25rem; }
+    .research li:last-child { margin-bottom: 0; }
+    .research h3, .rows h3 { font-size: 1.2rem; font-weight: 600; line-height: 1.35; margin: 0 0 0.35rem; }
+    .research p { margin: 0 0 0.45rem; }
+    .related { font-size: 1rem; color: var(--muted); }
+    .related a { margin-right: 0.8rem; }
 
-    /* SKILLS */
-    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--border); }
-    .skill-group { background: var(--bg-card); padding: 1.75rem; }
-    .skill-group-title {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
+    .year { font-size: 1.0625rem; font-weight: 600; color: var(--muted); margin: 0 0 1.1rem; font-variant-numeric: tabular-nums; }
+    .year ~ .year { margin-top: 2.75rem; }
+    .pubs { list-style: none; margin: 0; padding: 0; }
+    .pub { margin: 0 0 2rem; }
+    .pub:last-child { margin-bottom: 0; }
+    .pub-title { font-size: 1.2rem; font-weight: 600; line-height: 1.35; margin: 0 0 0.35rem; }
+    .pub-title a { color: var(--ink); text-decoration-color: color-mix(in srgb, var(--ink) 30%, transparent); }
+    .pub-title a:hover { color: var(--accent); text-decoration-color: currentColor; }
+    .pub-meta { margin: 0; font-size: 1.0625rem; color: var(--muted); }
+    .pub-meta strong { color: var(--ink); font-weight: 600; }
+    .status { color: var(--accent); }
+    .pub-actions { display: flex; flex-wrap: wrap; gap: 0.2rem 1.25rem; margin: 0.45rem 0 0; font-size: 1rem; }
+    .link-btn {
+      font: inherit; background: none; border: 0; padding: 0; cursor: pointer; color: var(--accent);
+      text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em;
+      text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
     }
-    .skill-tags { display: flex; flex-direction: column; gap: 0.65rem; }
-    .skill-tag { font-size: 0.83rem; color: var(--text-muted); display: flex; align-items: baseline; gap: 0.5rem; }
-    .skill-tag::before { content: '—'; font-family: var(--mono); font-size: 0.6rem; color: var(--text-dim); flex-shrink: 0; }
+    .link-btn:hover { text-decoration-color: currentColor; }
+    .link-btn.done { color: var(--ok); text-decoration: none; }
+    .pub-abs { margin: 0.8rem 0 0; padding-left: 1rem; border-left: 2px solid var(--line); font-size: 1.0625rem; }
+    .pub-abs p { margin: 0; }
 
-    /* PROJECTS */
-    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--border); }
-    .project-card {
-      background: var(--bg-card);
-      padding: 1.8rem;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      transition: background 0.2s;
-    }
-    .project-card:hover { background: var(--bg-hover); }
-    .project-kicker {
-      font-family: var(--mono);
-      font-size: 0.56rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.95rem;
-    }
-    .project-title {
-      font-family: var(--serif);
-      font-size: 1.22rem;
-      font-weight: 400;
-      color: var(--text);
-      line-height: 1.3;
-      margin-bottom: 0.85rem;
-    }
-    .project-desc {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
-    }
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: auto;
-      margin-bottom: 1.1rem;
-    }
-    .project-tag {
-      font-family: var(--mono);
-      font-size: 0.55rem;
-      letter-spacing: 0.05em;
-      color: var(--text-dim);
-      border: 1px solid var(--border-mid);
-      padding: 0.25rem 0.45rem;
-      text-transform: uppercase;
-    }
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
-    .project-link {
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(143,168,184,0.35);
-      padding-bottom: 0.15rem;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .project-link:hover { color: var(--text); border-color: var(--accent); }
+    .news { list-style: none; margin: 0; padding: 0; }
+    .news li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1.25rem; margin: 0 0 0.8rem; }
+    .news li:last-child { margin-bottom: 0; }
+    .news time { color: var(--muted); font-size: 1rem; padding-top: 0.12rem; font-variant-numeric: tabular-nums; }
+    .sub { font-size: 1.0625rem; font-weight: 600; color: var(--muted); margin: 0 0 1.1rem; }
+    .sub ~ .sub { margin-top: 2.75rem; }
+    .rows { list-style: none; margin: 0; padding: 0; }
+    .rows li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 1.25rem; margin: 0 0 2rem; }
+    .rows li:last-child { margin-bottom: 0; }
+    .when { color: var(--muted); font-size: 1rem; line-height: 1.5; padding-top: 0.15rem; font-variant-numeric: tabular-nums; }
+    .when span { display: block; }
+    .org { margin: 0; font-style: italic; }
+    .place { margin: 0 0 0.45rem; color: var(--muted); font-size: 1rem; }
+    .desc { margin: 0; }
+    .org + .desc { margin-top: 0.45rem; }
 
-    /* EXPERIENCE */
-    .exp-list { display: flex; flex-direction: column; }
-    .exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2.25rem 0; border-bottom: 1px solid var(--border); }
-    .exp-item:last-child { border-bottom: none; }
-    .exp-date { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.05em; color: var(--text-dim); line-height: 1.65; padding-top: 0.1rem; }
-    .exp-date .duration { color: var(--accent); display: block; margin-top: 0.35rem; }
-    .exp-role { font-size: 0.96rem; color: var(--text); font-weight: 400; margin-bottom: 0.2rem; }
-    .exp-company { font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.3rem; }
-    .exp-location { font-family: var(--mono); font-size: 0.6rem; color: var(--text-dim); margin-bottom: 0.8rem; }
-    .exp-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.75; }
+    .contact-lede { margin: 0 0 1.5rem; }
+    .contact { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.55rem 1rem; margin: 0; }
+    .contact dt { color: var(--muted); }
+    .contact dd { margin: 0; overflow-wrap: anywhere; }
 
-    /* RESEARCH */
-    .research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 1px solid var(--border); }
-    .research-card { padding: 2rem 2rem 2.25rem; background: var(--bg-card); transition: background 0.2s; }
-    .research-card:hover { background: var(--bg-hover); }
-    .research-idx { font-family: var(--mono); font-size: 0.58rem; color: var(--text-dim); margin-bottom: 1rem; }
-    .research-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--text); line-height: 1.3; margin-bottom: 0.8rem; }
-    .research-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.75; }
+    footer { padding: 2rem 0 2.5rem; color: var(--muted); font-size: 1rem; border-top: 1px solid var(--line); }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; }
+    footer p { margin: 0; }
 
-    /* PUBLICATIONS */
-    .pub-list { display: flex; flex-direction: column; }
-    .pub-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2.25rem 0; border-bottom: 1px solid var(--border); }
-    .pub-item:last-child { border-bottom: none; }
-    .pub-meta { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.1rem; }
-    .pub-year { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.05em; }
-    .pub-venue { font-family: var(--mono); font-size: 0.6rem; color: var(--text-dim); letter-spacing: 0.04em; line-height: 1.55; }
-    .pub-title { font-family: var(--serif); font-size: 1.08rem; font-weight: 400; color: var(--text); line-height: 1.35; margin-bottom: 0.5rem; }
-    .pub-authors { font-family: var(--mono); font-size: 0.61rem; color: var(--text-dim); letter-spacing: 0.04em; margin-bottom: 0.7rem; line-height: 1.5; }
-    .pub-authors strong { color: var(--text-muted); font-weight: 500; }
-    .pub-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 0.85rem; }
-    .pub-link {
-      font-family: var(--mono);
-      font-size: 0.61rem;
-      letter-spacing: 0.04em;
-      color: var(--accent-dim);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent-dim);
-      padding-bottom: 0.1rem;
-      transition: color 0.2s, border-color 0.2s;
+    @media (max-width: 900px) {
+      .menu-btn { display: inline-grid; }
+      .nav { position: absolute; top: var(--header-h); left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); display: none; }
+      .nav.open { display: block; }
+      .nav ul { flex-direction: column; gap: 0; padding: 0.25rem clamp(1.25rem, 4vw, 2.5rem) 1rem; }
+      .nav a { display: block; padding: 0.7rem 0; font-size: 1.125rem; }
     }
-    .pub-link:hover { color: var(--accent); border-color: var(--accent); }
-
-    /* CONTACT */
-    .contact-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 1px solid var(--border); }
-    .contact-link {
-      padding: 2rem 1.75rem;
-      background: var(--bg-card);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-      transition: background 0.2s;
+    @media (max-width: 760px) {
+      .sec-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .rows li { grid-template-columns: 1fr; gap: 0.2rem; }
+      .news li { grid-template-columns: 1fr; gap: 0; margin-bottom: 1.1rem; }
+      .hero-inner.has-photo { grid-template-columns: 1fr; }
+      .hero-inner.has-photo .photo { order: -1; }
+      .photo img { width: 120px; }
+      .when span { display: inline; }
+      .when span + span::before { content: ", "; }
+      .contact { grid-template-columns: 1fr; gap: 0 0; }
+      .contact dd { margin-bottom: 0.7rem; }
     }
-    .contact-link:hover { background: var(--bg-hover); }
-    .contact-link-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
-    .contact-link-value { font-size: 0.85rem; color: var(--accent); word-break: break-all; }
-
-    /* FOOTER */
-    footer { border-top: 1px solid var(--border); padding: 2rem 0; }
-    footer .container { display: flex; justify-content: space-between; align-items: center; }
-    footer p { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.06em; color: var(--text-dim); }
-
-    /* ANIMATIONS */
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-d1 { transition-delay: 0.1s; }
-
-    /* RESPONSIVE */
-    @media (max-width: 780px) {
-      nav .container { position: relative; }
-      .menu-toggle { display: inline-flex; }
-      .nav-links {
-        position: absolute;
-        top: calc(100% + 0.75rem);
-        left: 1rem;
-        right: 1rem;
-        flex: none;
-        flex-direction: column;
-        gap: 0;
-        justify-content: flex-start;
-        padding: 0.45rem;
-        border: 1px solid var(--border-mid);
-        background: rgba(19,20,22,0.98);
-        backdrop-filter: blur(16px);
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(-8px);
-        transition: opacity 0.2s ease, transform 0.2s ease;
-      }
-      .nav-links.open {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-      .nav-links a {
-        display: block;
-        padding: 0.85rem 0.9rem;
-        border-bottom: 1px solid var(--border);
-      }
-      .nav-links li:last-child a { border-bottom: none; }
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .edu-item, .exp-item, .pub-item { grid-template-columns: 1fr; gap: 0.4rem; }
-      .skills-grid, .projects-grid, .research-grid { grid-template-columns: 1fr; }
-      .contact-row { grid-template-columns: 1fr 1fr; }
-      h1.hero-name { font-size: 2.9rem; }
+    @media (max-width: 420px) {
+      .bar { gap: 0.75rem; }
+      .brand { font-size: 1rem; }
     }
-    @media (max-width: 480px) {
-      .contact-row { grid-template-columns: 1fr; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-network { animation: none; }
     }
   </style>
   <script type="application/ld+json">
@@ -559,969 +224,932 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Maurício Konrath",
-    "jobTitle": "Software Engineer & Researcher",
-    "description": "Mestrando em Ciência da Computação na UFSC com foco em IA, PLN e segurança da informação.",
-    "affiliation": [
-      {"@type": "Organization", "name": "Universidade Federal de Santa Catarina"},
-      {"@type": "Organization", "name": "LabSEC"}
+    "jobTitle": "Software Engineer and Researcher",
+    "description": "MSc student in Computer Science at UFSC researching representative personal AI agents, verifiable delegation, and trustworthy AI for legal documents.",
+    "email": "mailto:mauriciokonrat@gmail.com",
+    "identifier": "https://orcid.org/0000-0003-2383-9880",
+    "sameAs": [
+      "https://orcid.org/0000-0003-2383-9880",
+      "https://github.com/mauriciokonrath",
+      "https://www.linkedin.com/in/mauricio-konrath/"
     ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Florianópolis",
-      "addressRegion": "SC",
-      "addressCountry": "BR"
-    }
+    "affiliation": [
+      {"@type": "CollegeOrUniversity", "name": "Universidade Federal de Santa Catarina"},
+      {"@type": "Organization", "name": "Operador Nacional do Registro Civil de Pessoas Naturais (ON-RCPN)"}
+    ],
+    "address": {"@type": "PostalAddress", "addressLocality": "Florianópolis", "addressRegion": "SC", "addressCountry": "BR"}
   }
   </script>
 </head>
 <body>
+  <a class="skip" href="#main" data-i="skip">Pular para o conteúdo</a>
 
-  <nav>
-    <div class="container">
-      <a class="nav-logo" href="#hero">MK<span>.</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#education">Formação</a></li>
-        <li><a href="#projects">Projetos</a></li>
-        <li><a href="#experience">Experiência</a></li>
-        <li><a href="#research">Pesquisa</a></li>
-        <li><a href="#publications">Publicações</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-      <div class="nav-actions">
-        <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="pt" type="button" aria-label="Mudar idioma para português" onclick="setLang('pt')">PT</button>
-          <button class="lang-btn" data-lang="en" type="button" aria-label="Switch language to English" onclick="setLang('en')">EN</button>
-          <button class="lang-btn" data-lang="es" type="button" aria-label="Cambiar idioma a español" onclick="setLang('es')">ES</button>
+  <header class="site-header" id="siteHeader">
+    <div class="wrap bar">
+      <a class="brand" href="#top">Maurício Konrath</a>
+      <nav class="nav" id="nav" aria-label="Seções">
+        <ul id="navList"></ul>
+      </nav>
+      <div class="tools">
+        <div class="lang" role="group" aria-label="Idioma / Language / Idioma">
+          <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
         </div>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu">
-          <span></span>
-          <span></span>
+        <button class="icon-btn" id="themeBtn" type="button"></button>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <section id="hero">
-    <div class="hero-network" aria-hidden="true">
-      <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="presentation">
-        <g>
-          <path class="network-link-soft" d="M35 245 L205 110 L360 190 L520 125 L700 215 L875 150 L1040 220 L1225 145 L1450 230" />
-          <path class="network-link-soft" d="M80 615 L245 470 L430 560 L610 470 L790 560 L980 485 L1175 575 L1385 500 L1540 625" />
-          <path class="network-link-soft" d="M165 770 L300 640 L500 740 L665 660 L860 760 L1080 675 L1275 760" />
-          <path class="network-link" d="M60 510 L205 110" />
-          <path class="network-link" d="M60 510 L245 470" />
-          <path class="network-link" d="M205 110 L360 190 L430 560" />
-          <path class="network-link" d="M245 470 L430 560 L500 740" />
-          <path class="network-link" d="M360 190 L520 125 L610 470" />
-          <path class="network-link" d="M430 560 L610 470 L700 215" />
-          <path class="network-link" d="M500 740 L665 660 L790 560" />
-          <path class="network-link" d="M520 125 L700 215 L875 150" />
-          <path class="network-link" d="M610 470 L790 560 L980 485" />
-          <path class="network-link" d="M665 660 L860 760 L1080 675" />
-          <path class="network-link" d="M700 215 L875 150 L980 485" />
-          <path class="network-link" d="M790 560 L980 485 L1175 575" />
-          <path class="network-link" d="M875 150 L1040 220 L1225 145" />
-          <path class="network-link" d="M980 485 L1175 575 L1385 500" />
-          <path class="network-link" d="M1040 220 L1225 145 L1450 230" />
-          <path class="network-link" d="M1175 575 L1275 760 L1385 500 L1540 625" />
-          <path class="network-link-soft" d="M360 190 L610 470 L875 150 L1175 575" />
-          <path class="network-link-soft" d="M205 110 L520 125 L790 560 L1040 220 L1385 500" />
-          <path class="network-link-soft" d="M245 470 L700 215 L980 485 L1275 760" />
-          <path class="network-link-soft" d="M60 510 L430 560 L790 560 L1175 575 L1540 625" />
-        </g>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="name">
+      <div class="hero-network" aria-hidden="true">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+          <g>
+            <path class="net-link soft" d="M35 245 L205 110 L360 190 L520 125 L700 215 L875 150 L1040 220 L1225 145 L1450 230" />
+            <path class="net-link soft" d="M80 615 L245 470 L430 560 L610 470 L790 560 L980 485 L1175 575 L1385 500 L1540 625" />
+            <path class="net-link soft" d="M165 770 L300 640 L500 740 L665 660 L860 760 L1080 675 L1275 760" />
+            <path class="net-link" d="M60 510 L205 110" />
+            <path class="net-link" d="M60 510 L245 470" />
+            <path class="net-link" d="M205 110 L360 190 L430 560" />
+            <path class="net-link" d="M245 470 L430 560 L500 740" />
+            <path class="net-link" d="M360 190 L520 125 L610 470" />
+            <path class="net-link" d="M430 560 L610 470 L700 215" />
+            <path class="net-link" d="M500 740 L665 660 L790 560" />
+            <path class="net-link" d="M520 125 L700 215 L875 150" />
+            <path class="net-link" d="M610 470 L790 560 L980 485" />
+            <path class="net-link" d="M665 660 L860 760 L1080 675" />
+            <path class="net-link" d="M700 215 L875 150 L980 485" />
+            <path class="net-link" d="M790 560 L980 485 L1175 575" />
+            <path class="net-link" d="M875 150 L1040 220 L1225 145" />
+            <path class="net-link" d="M980 485 L1175 575 L1385 500" />
+            <path class="net-link" d="M1040 220 L1225 145 L1450 230" />
+            <path class="net-link" d="M1175 575 L1275 760 L1385 500 L1540 625" />
+            <path class="net-link soft" d="M360 190 L610 470 L875 150 L1175 575" />
+            <path class="net-link soft" d="M205 110 L520 125 L790 560 L1040 220 L1385 500" />
+            <path class="net-link soft" d="M245 470 L700 215 L980 485 L1275 760" />
+            <path class="net-link soft" d="M60 510 L430 560 L790 560 L1175 575 L1540 625" />
+          </g>
+          <g>
+            <circle class="net-node" cx="60" cy="510" r="7" />
+            <circle class="net-node soft" cx="205" cy="110" r="4.5" />
+            <circle class="net-node soft" cx="245" cy="470" r="4.5" />
+            <circle class="net-node soft" cx="360" cy="190" r="4" />
+            <circle class="net-node" cx="430" cy="560" r="5.5" />
+            <circle class="net-node soft" cx="500" cy="740" r="4.5" />
+            <circle class="net-node soft" cx="520" cy="125" r="4" />
+            <circle class="net-node" cx="610" cy="470" r="4.5" />
+            <circle class="net-node soft" cx="665" cy="660" r="4" />
+            <circle class="net-node" cx="700" cy="215" r="4.5" />
+            <circle class="net-node soft" cx="790" cy="560" r="4.5" />
+            <circle class="net-node soft" cx="860" cy="760" r="4" />
+            <circle class="net-node" cx="875" cy="150" r="4.5" />
+            <circle class="net-node soft" cx="980" cy="485" r="4.5" />
+            <circle class="net-node soft" cx="1040" cy="220" r="4" />
+            <circle class="net-node soft" cx="1080" cy="675" r="4" />
+            <circle class="net-node" cx="1175" cy="575" r="4.5" />
+            <circle class="net-node soft" cx="1225" cy="145" r="4" />
+            <circle class="net-node" cx="1275" cy="760" r="6" />
+            <circle class="net-node soft" cx="1385" cy="500" r="4.5" />
+            <circle class="net-node" cx="1450" cy="230" r="4" />
+            <circle class="net-node soft" cx="1540" cy="625" r="4.5" />
+          </g>
+          <g>
+            <g class="net-lock" transform="translate(285 255)">
+              <rect x="-12" y="0" width="24" height="20" rx="4" />
+              <path d="M-6 0v-6a6 6 0 0 1 12 0v6" />
+              <circle cx="0" cy="10" r="1.8" />
+            </g>
+            <g class="net-lock" transform="translate(1015 305)">
+              <rect x="-12" y="0" width="24" height="20" rx="4" />
+              <path d="M-6 0v-6a6 6 0 0 1 12 0v6" />
+              <circle cx="0" cy="10" r="1.8" />
+            </g>
+            <g class="net-lock" transform="translate(1325 625)">
+              <rect x="-12" y="0" width="24" height="20" rx="4" />
+              <path d="M-6 0v-6a6 6 0 0 1 12 0v6" />
+              <circle cx="0" cy="10" r="1.8" />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="wrap hero-inner" id="heroInner">
+        <div>
+          <h1 id="name">Maurício Konrath</h1>
+          <p class="intro" data-i="intro"></p>
+          <ul class="hero-links" id="heroLinks"></ul>
+        </div>
+        <figure class="photo" id="photo" hidden></figure>
+      </div>
+    </section>
 
-        <g>
-          <circle class="network-node" cx="60" cy="510" r="7" />
-          <circle class="network-node soft" cx="205" cy="110" r="4.5" />
-          <circle class="network-node soft" cx="245" cy="470" r="4.5" />
-          <circle class="network-node soft" cx="360" cy="190" r="4" />
-          <circle class="network-node" cx="430" cy="560" r="5.5" />
-          <circle class="network-node soft" cx="500" cy="740" r="4.5" />
-          <circle class="network-node soft" cx="520" cy="125" r="4" />
-          <circle class="network-node soft" cx="610" cy="470" r="4.5" />
-          <circle class="network-node soft" cx="665" cy="660" r="4" />
-          <circle class="network-node soft" cx="700" cy="215" r="4.5" />
-          <circle class="network-node soft" cx="790" cy="560" r="4.5" />
-          <circle class="network-node soft" cx="860" cy="760" r="4" />
-          <circle class="network-node soft" cx="875" cy="150" r="4.5" />
-          <circle class="network-node soft" cx="980" cy="485" r="4.5" />
-          <circle class="network-node soft" cx="1040" cy="220" r="4" />
-          <circle class="network-node soft" cx="1080" cy="675" r="4" />
-          <circle class="network-node soft" cx="1175" cy="575" r="4.5" />
-          <circle class="network-node soft" cx="1225" cy="145" r="4" />
-          <circle class="network-node" cx="1275" cy="760" r="6" />
-          <circle class="network-node soft" cx="1385" cy="500" r="4.5" />
-          <circle class="network-node soft" cx="1450" cy="230" r="4" />
-          <circle class="network-node soft" cx="1540" cy="625" r="4.5" />
-        </g>
+    <section class="sec" id="news" aria-labelledby="newsTitle">
+      <div class="wrap sec-grid">
+        <h2 id="newsTitle" data-i="newsTitle"></h2>
+        <ul class="news" id="newsList"></ul>
+      </div>
+    </section>
 
-        <g>
-          <g class="network-lock" transform="translate(285 255)">
-            <rect class="lock-body" x="-12" y="0" width="24" height="20" rx="4" />
-            <path class="lock-arc" d="M-6 0v-6a6 6 0 0 1 12 0v6" />
-            <circle class="lock-dot" cx="0" cy="10" r="1.8" />
-          </g>
-          <g class="network-lock" transform="translate(1015 305)">
-            <rect class="lock-body" x="-12" y="0" width="24" height="20" rx="4" />
-            <path class="lock-arc" d="M-6 0v-6a6 6 0 0 1 12 0v6" />
-            <circle class="lock-dot" cx="0" cy="10" r="1.8" />
-          </g>
-          <g class="network-lock" transform="translate(1325 625)">
-            <rect class="lock-body" x="-12" y="0" width="24" height="20" rx="4" />
-            <path class="lock-arc" d="M-6 0v-6a6 6 0 0 1 12 0v6" />
-            <circle class="lock-dot" cx="0" cy="10" r="1.8" />
-          </g>
-        </g>
-      </svg>
-    </div>
-    <div class="hero-line"></div>
-    <div class="hero-line"></div>
-    <div class="hero-line"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-tag" id="heroTag"></div>
-        <h1 class="hero-name">Maurício<br><em>Konrath</em></h1>
-        <p class="hero-role" id="heroRole"></p>
-        <p class="hero-bio" id="heroBio"></p>
-        <div class="hero-cta">
-          <a class="btn primary" href="mailto:mauriciokonrat@gmail.com" id="heroContact"></a>
-          <a class="btn" href="#projects" id="heroProjects">Ver projetos</a>
-          <a class="btn" href="https://github.com/mauriciokonrath" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/mauricio-konrath/" target="_blank" rel="noopener">LinkedIn</a>
+    <section class="sec" id="about" aria-labelledby="aboutTitle">
+      <div class="wrap sec-grid">
+        <h2 id="aboutTitle" data-i="aboutTitle"></h2>
+        <div>
+          <div class="prose" id="aboutText"></div>
+          <dl class="skills" id="skills"></dl>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about">
-    <div class="container">
-      <p class="section-label" id="aboutLabel"></p>
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <h2 class="section-title" id="aboutTitle"></h2>
-          <div id="aboutText"></div>
+    <section class="sec" id="research" aria-labelledby="researchTitle">
+      <div class="wrap sec-grid">
+        <h2 id="researchTitle" data-i="researchTitle"></h2>
+        <ul class="research" id="researchList"></ul>
+      </div>
+    </section>
+
+    <section class="sec" id="publications" aria-labelledby="pubTitle">
+      <div class="wrap sec-grid">
+        <div>
+          <h2 id="pubTitle" data-i="pubTitle"></h2>
+          <p class="sec-note" id="pubNote"></p>
         </div>
-        <div class="about-sidebar reveal reveal-d1">
-          <div class="stat-card">
-            <div class="stat-number">MSc</div>
-            <div class="stat-label" id="statMsc"></div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">4</div>
-            <div class="stat-label" id="statPubs"></div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">3</div>
-            <div class="stat-label" id="statSpringer"></div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">4+</div>
-            <div class="stat-label" id="statYears"></div>
-          </div>
+        <div id="pubList"></div>
+      </div>
+    </section>
+
+    <section class="sec" id="activities" aria-labelledby="actTitle">
+      <div class="wrap sec-grid">
+        <h2 id="actTitle" data-i="actTitle"></h2>
+        <div>
+          <h3 class="sub" data-i="talksTitle"></h3>
+          <ol class="rows" id="talkList"></ol>
+          <h3 class="sub" data-i="teachTitle"></h3>
+          <ol class="rows" id="teachList"></ol>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="education">
-    <div class="container">
-      <p class="section-label" id="educationLabel"></p>
-      <h2 class="section-title" id="educationTitle"></h2>
-      <div class="edu-list" id="educationList"></div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="container">
-      <p class="section-label" id="skillsLabel"></p>
-      <h2 class="section-title" id="skillsTitle"></h2>
-      <div class="skills-grid reveal" id="skillsGrid"></div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <p class="section-label" id="projectsLabel"></p>
-      <h2 class="section-title" id="projectsTitle"></h2>
-      <div class="projects-grid reveal" id="projectsGrid"></div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-      <p class="section-label" id="expLabel"></p>
-      <h2 class="section-title" id="expTitle"></h2>
-      <div class="exp-list" id="expList"></div>
-    </div>
-  </section>
-
-  <section id="research">
-    <div class="container">
-      <p class="section-label" id="researchLabel"></p>
-      <h2 class="section-title" id="researchTitle"></h2>
-      <div class="research-grid reveal" id="researchGrid"></div>
-    </div>
-  </section>
-
-  <section id="publications">
-    <div class="container">
-      <p class="section-label" id="pubLabel"></p>
-      <h2 class="section-title" id="pubTitle"></h2>
-      <div class="pub-list" id="pubList"></div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <p class="section-label" id="contactLabel"></p>
-      <h2 class="section-title" id="contactTitle"></h2>
-      <div class="contact-row reveal">
-        <a class="contact-link" href="mailto:mauriciokonrat@gmail.com">
-          <span class="contact-link-label" id="contactEmailLabel"></span>
-          <span class="contact-link-value">mauriciokonrat&#64;gmail.com</span>
-        </a>
-        <a class="contact-link" href="https://www.linkedin.com/in/mauricio-konrath/" target="_blank" rel="noopener">
-          <span class="contact-link-label">LinkedIn</span>
-          <span class="contact-link-value">mauricio-konrath</span>
-        </a>
-        <a class="contact-link" href="https://github.com/mauriciokonrath" target="_blank" rel="noopener">
-          <span class="contact-link-label">GitHub</span>
-          <span class="contact-link-value">@mauriciokonrath</span>
-        </a>
-        <a class="contact-link" href="#">
-          <span class="contact-link-label" id="contactLocLabel"></span>
-          <span class="contact-link-value">Florianópolis, SC — Brasil</span>
-        </a>
+    <section class="sec" id="experience" aria-labelledby="expTitle">
+      <div class="wrap sec-grid">
+        <h2 id="expTitle" data-i="expTitle"></h2>
+        <ol class="rows" id="expList"></ol>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="sec" id="education" aria-labelledby="eduTitle">
+      <div class="wrap sec-grid">
+        <h2 id="eduTitle" data-i="eduTitle"></h2>
+        <ol class="rows" id="eduList"></ol>
+      </div>
+    </section>
+
+    <section class="sec" id="contact" aria-labelledby="contactTitle">
+      <div class="wrap sec-grid">
+        <h2 id="contactTitle" data-i="contactTitle"></h2>
+        <div>
+          <p class="contact-lede" data-i="contactLede"></p>
+          <dl class="contact" id="contactList"></dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <p class="sr-only" id="live" aria-live="polite"></p>
 
   <footer>
-    <div class="container">
-      <p>Maurício Konrath — <span id="footerYear"></span></p>
-      <p id="footerSub"></p>
+    <div class="wrap">
+      <p>Maurício Konrath, Florianópolis</p>
+      <p data-i="updated"></p>
     </div>
   </footer>
-
   <script>
-  const T = {
-    pt: {
-      htmlLang: 'pt-BR',
-      nav: ['Sobre','Formação','Experiência','Pesquisa','Publicações','Contato'],
-      navIds: ['about','education','experience','research','publications','contact'],
-      heroTag: 'Engenheiro de Software & Pesquisador — UFSC',
-      heroRole: 'IA · PLN · Segurança da Informação · Florianópolis, SC',
-      heroBio: 'Mestrando em Ciência da Computação na UFSC e pesquisador no LabSEC. Trabalho na fronteira entre inteligência artificial, processamento de linguagem natural e segurança da informação — com publicações no Springer LNCS e experiência em desenvolvimento de software para infraestrutura de identidade digital nacional.',
-      heroContact: 'Entre em contato',
-      aboutLabel: '01 — Sobre',
-      aboutTitle: 'Segurança\nmeets Linguagem',
-      aboutTitleEm: 'meets',
-      aboutText: [
-        'Sou mestrando em Ciência da Computação na <strong>Universidade Federal de Santa Catarina (UFSC)</strong> e pesquisador no <strong>Laboratório de Segurança em Computação (LabSEC)</strong>. Meu trabalho combina técnicas avançadas de PLN com desafios reais de proteção e classificação de dados sensíveis.',
-        'Tenho três capítulos publicados em 2026 pelo <strong>Springer Nature (LNCS)</strong>, com foco em modelos Transformer para classificação de textos sensíveis em cenários de baixa disponibilidade de dados — um problema crítico em contextos jurídicos, governamentais e corporativos.',
-        'Atualmente atuo como Engenheiro de Software no <strong>Operador Nacional do Registro Civil do Brasil</strong>, contribuindo para a infraestrutura de identidade digital nacional. Anteriormente desenvolvi sistemas no <strong>Tribunal de Justiça de Santa Catarina</strong> e participei de iniciação científica pelo <strong>PET Computação — UFSC</strong>.',
-        'Natural de Santa Cruz do Sul, RS. Vivo e trabalho em Florianópolis, SC.',
-      ],
-      statMsc: 'Mestrando — Ciência da Computação, UFSC',
-      statPubs: 'Artigos e capítulos publicados',
-      statSpringer: 'Capítulos Springer LNCS — 2026',
-      statYears: 'Anos de experiência profissional',
-      educationLabel: '02 — Formação',
-      educationTitle: 'Educação',
-      education: [
-        {
-          period: '2025 — atual', badge: 'Em curso',
-          degree: 'Mestrado em Ciência da Computação',
-          inst: 'Universidade Federal de Santa Catarina (UFSC) — Florianópolis, SC',
-          desc: 'Pesquisa em inteligência artificial aplicada à segurança da informação, com ênfase em modelos de linguagem, classificação de documentos sensíveis e processamento de linguagem natural em português. Vinculado ao Laboratório de Segurança em Computação (LabSEC).',
-        },
-        {
-          period: '2021 — 2025', badge: null,
-          degree: 'Bacharelado em Ciência da Computação',
-          inst: 'Universidade Federal de Santa Catarina (UFSC) — Florianópolis, SC',
-          desc: 'Graduação com ênfase em inteligência artificial, segurança da informação e sistemas de software. Participou do PET Computação (Programa de Educação Tutorial) e do LabSEC, com atividades de ensino, pesquisa e extensão e iniciação científica em PLN e segurança.',
-        },
-      ],
-      skillsLabel: '03 — Competências',
-      skillsTitle: 'Habilidades',
-      skillGroups: [
-        { title: 'IA & PLN', items: ['Transformers / HuggingFace','BERT, mBERT, BERTimbau','GAN-BERT','Fine-tuning de LLMs','Classificação de texto','OCR inteligente','PyTorch','Scikit-learn'] },
-        { title: 'Desenvolvimento', items: ['Python','Java / Spring Boot','REST APIs','Git / GitHub','Linux','Docker','SQL'] },
-        { title: 'Domínio & Pesquisa', items: ['Segurança da informação','Classificação de dados sensíveis','Avaliação de modelos NLP','Metodologia científica','Redação acadêmica (EN/PT)','Identidade digital'] },
-      ],
-      expLabel: '04 — Experiência',
-      expTitle: 'Trajetória Profissional',
-      experience: [
-        {
-          period: 'out 2025 — atual', duration: '6 meses',
-          role: 'Engenheiro de Software',
-          company: 'Operador Nacional — Registro Civil do Brasil',
-          location: 'São Paulo, SP · Remoto · Tempo integral',
-          desc: 'Desenvolvimento de software para a plataforma nacional de registro civil e identidade digital do Brasil. Atuação em sistemas de alta disponibilidade para infraestrutura de identidade da população brasileira.',
-        },
-        {
-          period: 'abr 2024 — out 2025', duration: '1 ano 7 meses',
-          role: 'Pesquisador Bolsista',
-          company: 'LabSEC — Laboratório de Segurança em Computação, UFSC',
-          location: 'Florianópolis, SC',
-          desc: 'Pesquisa aplicada em IA e PLN para segurança da informação. Classificação de documentos sensíveis com modelos Transformer (BERT, GAN-BERT), avaliação de LLMs em português e desenvolvimento de sistema OCR para transcrição de documentos históricos. Resultados publicados em três capítulos no Springer LNCS (2026).',
-        },
-        {
-          period: 'mar 2023 — dez 2023', duration: '10 meses',
-          role: 'Desenvolvedor de Software',
-          company: 'Tribunal de Justiça de Santa Catarina (TJSC)',
-          location: 'Florianópolis, SC · Estágio',
-          desc: 'Desenvolvimento e manutenção de sistemas internos do poder judiciário catarinense, com requisitos rigorosos de segurança, disponibilidade e conformidade.',
-        },
-        {
-          period: 'jan 2022 — abr 2024', duration: '2 anos 4 meses',
-          role: 'Bolsista — PET Computação',
-          company: 'PET Computação — Universidade Federal de Santa Catarina',
-          location: 'Florianópolis, SC',
-          desc: 'Participação no Programa de Educação Tutorial do curso de Ciência da Computação, com atividades de ensino, pesquisa e extensão. Iniciação científica em projetos de computação.',
-        },
-        {
-          period: 'ago 2020 — fev 2021', duration: '7 meses',
-          role: 'Aprendiz',
-          company: 'BAT — British American Tobacco',
-          location: 'Santa Cruz do Sul, RS · Meio período',
-          desc: 'Programa jovem aprendiz em uma das maiores multinacionais do setor, com desenvolvimento de competências profissionais e técnicas em ambiente corporativo de grande porte.',
-        },
-      ],
-      researchLabel: '05 — Pesquisa',
-      researchTitle: 'Áreas de\nInvestigação',
-      researchTitleEm: 'Investigação',
-      research: [
-        { idx:'01', title:'Classificação de Documentos Sensíveis', desc:'Aplicação de modelos Transformer — incluindo BERT, mBERT, BERTimbau e GAN-BERT — para identificação e classificação automática de documentos com informações sensíveis. Foco em cenários de escassez de dados rotulados (low-data), frequentes em contextos jurídicos e governamentais.' },
-        { idx:'02', title:'Avaliação de LLMs em Português', desc:'Análise comparativa de modelos de linguagem em português para contextos de segurança da informação, investigando transferência cross-lingual, alinhamento de domínio e estratégias de fine-tuning para textos jurídicos e institucionais.' },
-        { idx:'03', title:'OCR Inteligente para Acervos Históricos', desc:'Desenvolvimento de pipeline de reconhecimento óptico de caracteres combinado com modelos de linguagem para transcrição, correção e indexação de documentos históricos manuscritos ou degradados, preservando patrimônio documental.' },
-        { idx:'04', title:'IA Aplicada à Segurança da Informação', desc:'Investigação de métodos para integrar inteligência artificial em sistemas que exigem confidencialidade, integridade e disponibilidade de dados, com ênfase em automação de processos de gestão de informação sensível em organizações críticas.' },
-      ],
-      pubLabel: '06 — Publicações',
-      pubTitle: 'Artigos &\nCapítulos de Livro',
-      publications: [
-        {
-          year:'2026', venue:'Springer Nature\nLNCS vol. 16222\np. 203–214',
-          title:'Limits and Surprises of Cross-Lingual BERT Under Data Scarcity: A Portuguese Case Study in Sensitive-Text Classification',
-          authors:'Fernandes Silvano, W.; Custódio, R. F.; <strong>Konrath, M.</strong>',
-          desc:'Estudo de caso investigando os limites e comportamentos inesperados do BERT multilingual em cenários de escassez de dados para classificação de textos sensíveis em português. Avalia a capacidade de transferência cross-lingual e propõe estratégias para mitigar a degradação de performance com poucos exemplos rotulados.',
-          doi:'doi.org/10.1007/978-3-032-09044-7_15', href:'https://doi.org/10.1007/978-3-032-09044-7_15',
-        },
-        {
-          year:'2026', venue:'Springer Nature\nLNCS vol. 16222\np. 190–202',
-          title:'Rethinking GAN-BERT for Sensitive Text Classification: The Impact of Training Dynamics and Domain Alignment in Low-Data Scenarios',
-          authors:'Silvano, W. F.; <strong>Konrath, M.</strong>; Custódio, R. F.',
-          desc:'Reavaliação crítica da arquitetura GAN-BERT para classificação de textos sensíveis, com foco no impacto das dinâmicas de treinamento adversarial e do alinhamento de domínio em ambientes com poucos dados anotados. Propõe ajustes que melhoram a estabilidade e a capacidade de generalização do modelo.',
-          doi:'doi.org/10.1007/978-3-032-09044-7_14', href:'https://doi.org/10.1007/978-3-032-09044-7_14',
-        },
-        {
-          year:'2026', venue:'Springer Nature\nLNCS vol. 16380\np. 85–103',
-          title:'Automation and Risk: Transformers Models Reshape Sensitive Information Management',
-          authors:'Silvano, W. F.; <strong>Konrath, M.</strong>; Mayr, L.; Custódio, R. F.',
-          desc:'Análise abrangente de como modelos Transformer estão transformando a gestão de informações sensíveis em organizações. Avalia riscos de automação, vieses de modelos e implicações para conformidade e privacidade de dados em contextos institucionais de alta criticidade.',
-          doi:'doi.org/10.1007/978-3-032-13714-2_7', href:'https://doi.org/10.1007/978-3-032-13714-2_7',
-        },
-        {
-          year:'2020', venue:'SBC\nERCOMPRS 2020\np. 50',
-          title:'Chatbot Iara: relacionando e interagindo com dados sobre o novo coronavírus em Santa Cruz do Sul',
-          authors:'Martini, P.; Tomaz, M.; Priebe, P.; Konrath, Ma.; <strong>Konrath, M.</strong>; Bagatini, D.; Peranconi, D.',
-          desc:'Desenvolvimento de chatbot conversacional para coleta, relacionamento e disseminação de dados epidemiológicos sobre COVID-19 na região de Santa Cruz do Sul, RS. O sistema integrou fontes de dados públicas com interface acessível à população. Apresentado na I Escola Regional de Computação do Rio Grande do Sul (ERCOMPRS 2020).',
-          doi:'doi.org/10.5753/ercomprs.2020.14295', href:'https://doi.org/10.5753/ercomprs.2020.14295',
-        },
-      ],
-      contactLabel: '07 — Contato',
-      contactTitle: 'Vamos conversar',
-      contactEmailLabel: 'Email',
-      contactLocLabel: 'Localização',
-      footerSub: 'Florianópolis, Brasil · UFSC · LabSEC',
-    },
+  (function () {
+    'use strict';
 
-    en: {
-      htmlLang: 'en',
-      nav: ['About','Education','Experience','Research','Publications','Contact'],
-      navIds: ['about','education','experience','research','publications','contact'],
-      heroTag: 'Software Engineer & Researcher — UFSC',
-      heroRole: 'AI · NLP · Information Security · Florianópolis, SC',
-      heroBio: 'MSc student in Computer Science at UFSC and researcher at LabSEC. I work at the intersection of artificial intelligence, natural language processing, and information security — with publications in Springer LNCS and experience building software for national digital identity infrastructure.',
-      heroContact: 'Get in touch',
-      aboutLabel: '01 — About',
-      aboutTitle: 'Security\nmeets Language',
-      aboutTitleEm: 'meets',
-      aboutText: [
-        'I am an MSc student in Computer Science at the <strong>Federal University of Santa Catarina (UFSC)</strong> and a researcher at the <strong>Laboratory of Computer Security (LabSEC)</strong>. My work combines advanced NLP techniques with real-world challenges in sensitive data protection and classification.',
-        'I have three book chapters published in 2026 by <strong>Springer Nature (LNCS)</strong>, focusing on Transformer models for sensitive text classification in low-data scenarios — a critical problem in legal, governmental, and corporate contexts.',
-        'I currently work as a Software Engineer at the <strong>National Civil Registry Operator of Brazil</strong>, contributing to the national digital identity infrastructure. Previously, I developed systems at the <strong>Court of Justice of Santa Catarina</strong> and conducted undergraduate research through <strong>PET Computing — UFSC</strong>.',
-        'Originally from Santa Cruz do Sul, RS. Currently based in Florianópolis, SC.',
-      ],
-      statMsc: 'MSc Student — Computer Science, UFSC',
-      statPubs: 'Published articles and book chapters',
-      statSpringer: 'Springer LNCS chapters — 2026',
-      statYears: 'Years of professional experience',
-      educationLabel: '02 — Education',
-      educationTitle: 'Education',
-      education: [
-        {
-          period: '2025 — present', badge: 'Ongoing',
-          degree: 'MSc in Computer Science',
-          inst: 'Federal University of Santa Catarina (UFSC) — Florianópolis, SC, Brazil',
-          desc: 'Research in artificial intelligence applied to information security, with emphasis on language models, sensitive document classification, and natural language processing in Portuguese. Affiliated with the Laboratory of Computer Security (LabSEC).',
-        },
-        {
-          period: '2021 — 2025', badge: null,
-          degree: 'Bachelor of Science in Computer Science',
-          inst: 'Federal University of Santa Catarina (UFSC) — Florianópolis, SC, Brazil',
-          desc: 'Undergraduate degree with emphasis on artificial intelligence, information security, and software systems. Participated in PET Computing (Tutorial Education Program) and LabSEC, with activities in teaching, research, and community outreach, including undergraduate research in NLP and security.',
-        },
-      ],
-      skillsLabel: '03 — Skills',
-      skillsTitle: 'Skills',
-      skillGroups: [
-        { title: 'AI & NLP', items: ['Transformers / HuggingFace','BERT, mBERT, BERTimbau','GAN-BERT','LLM Fine-tuning','Text classification','Intelligent OCR','PyTorch','Scikit-learn'] },
-        { title: 'Development', items: ['Python','Java / Spring Boot','REST APIs','Git / GitHub','Linux','Docker','SQL'] },
-        { title: 'Domain & Research', items: ['Information security','Sensitive data classification','NLP model evaluation','Scientific methodology','Academic writing (EN/PT)','Digital identity'] },
-      ],
-      expLabel: '04 — Experience',
-      expTitle: 'Professional Background',
-      experience: [
-        {
-          period: 'Oct 2025 — present', duration: '6 months',
-          role: 'Software Engineer',
-          company: 'National Operator — Civil Registry of Brazil',
-          location: 'São Paulo, SP · Remote · Full-time',
-          desc: 'Software development for the national civil registry and digital identity platform of Brazil. Working on high-availability systems supporting the identity infrastructure for the Brazilian population.',
-        },
-        {
-          period: 'Apr 2024 — Oct 2025', duration: '1 year 7 months',
-          role: 'Research Fellow',
-          company: 'LabSEC — Laboratory of Computer Security, UFSC',
-          location: 'Florianópolis, SC, Brazil',
-          desc: 'Applied research in AI and NLP for information security. Work included: sensitive document classification using Transformer models (BERT, GAN-BERT), comparative evaluation of language models in Portuguese for security contexts, and development of an intelligent OCR system for historical document transcription. Results published in three chapters in Springer LNCS (2026).',
-        },
-        {
-          period: 'Mar 2023 — Dec 2023', duration: '10 months',
-          role: 'Software Developer',
-          company: 'Court of Justice of Santa Catarina (TJSC)',
-          location: 'Florianópolis, SC · Internship',
-          desc: 'Development and maintenance of internal systems for the Santa Catarina state judiciary. Worked in an institutional environment with strict requirements for security, availability, and compliance.',
-        },
-        {
-          period: 'Jan 2022 — Apr 2024', duration: '2 years 4 months',
-          role: 'Research Scholar — PET Computing',
-          company: 'PET Computing — Federal University of Santa Catarina',
-          location: 'Florianópolis, SC',
-          desc: 'Member of the Tutorial Education Program in Computer Science, with activities spanning teaching, research, and community outreach. Conducted undergraduate research in computing-related projects.',
-        },
-        {
-          period: 'Aug 2020 — Feb 2021', duration: '7 months',
-          role: 'Apprentice',
-          company: 'BAT — British American Tobacco',
-          location: 'Santa Cruz do Sul, RS · Part-time',
-          desc: 'Young apprentice program at one of the largest multinationals in the sector, developing professional and technical competencies in a large corporate environment.',
-        },
-      ],
-      researchLabel: '05 — Research',
-      researchTitle: 'Research\nAreas',
-      researchTitleEm: 'Areas',
-      research: [
-        { idx:'01', title:'Sensitive Document Classification', desc:'Application of Transformer models — including BERT, mBERT, BERTimbau, and GAN-BERT — for automatic identification and classification of documents containing sensitive information. Focus on low-data scenarios, common in legal and governmental contexts.' },
-        { idx:'02', title:'LLM Evaluation in Portuguese', desc:'Comparative analysis of language models in Portuguese for information security contexts, investigating cross-lingual transfer, domain alignment, and fine-tuning strategies for legal and institutional texts.' },
-        { idx:'03', title:'Intelligent OCR for Historical Archives', desc:'Development of an optical character recognition pipeline combined with language models for transcription, correction, and indexing of handwritten or degraded historical documents, preserving documentary heritage.' },
-        { idx:'04', title:'AI Applied to Information Security', desc:'Investigation of methods to integrate artificial intelligence in systems requiring data confidentiality, integrity, and availability, with emphasis on automating sensitive information management processes in critical organizations.' },
-      ],
-      pubLabel: '06 — Publications',
-      pubTitle: 'Articles &\nBook Chapters',
-      publications: [
-        {
-          year:'2026', venue:'Springer Nature\nLNCS vol. 16222\npp. 203–214',
-          title:'Limits and Surprises of Cross-Lingual BERT Under Data Scarcity: A Portuguese Case Study in Sensitive-Text Classification',
-          authors:'Fernandes Silvano, W.; Custódio, R. F.; <strong>Konrath, M.</strong>',
-          desc:'A case study investigating the limits and unexpected behaviors of multilingual BERT in data-scarce scenarios for sensitive text classification in Portuguese. Evaluates cross-lingual transfer capacity and proposes strategies to mitigate performance degradation with few labeled examples.',
-          doi:'doi.org/10.1007/978-3-032-09044-7_15', href:'https://doi.org/10.1007/978-3-032-09044-7_15',
-        },
-        {
-          year:'2026', venue:'Springer Nature\nLNCS vol. 16222\npp. 190–202',
-          title:'Rethinking GAN-BERT for Sensitive Text Classification: The Impact of Training Dynamics and Domain Alignment in Low-Data Scenarios',
-          authors:'Silvano, W. F.; <strong>Konrath, M.</strong>; Custódio, R. F.',
-          desc:'A critical reassessment of the GAN-BERT architecture for sensitive text classification, focusing on the impact of adversarial training dynamics and domain alignment in low-annotation environments. Proposes adjustments that improve model stability and generalization capacity.',
-          doi:'doi.org/10.1007/978-3-032-09044-7_14', href:'https://doi.org/10.1007/978-3-032-09044-7_14',
-        },
-        {
-          year:'2026', venue:'Springer Nature\nLNCS vol. 16380\npp. 85–103',
-          title:'Automation and Risk: Transformers Models Reshape Sensitive Information Management',
-          authors:'Silvano, W. F.; <strong>Konrath, M.</strong>; Mayr, L.; Custódio, R. F.',
-          desc:'A comprehensive analysis of how Transformer models are transforming sensitive information management in organizations. Evaluates automation risks, model biases, and implications for data compliance and privacy in high-criticality institutional contexts.',
-          doi:'doi.org/10.1007/978-3-032-13714-2_7', href:'https://doi.org/10.1007/978-3-032-13714-2_7',
-        },
-        {
-          year:'2020', venue:'SBC\nERCOMPRS 2020\np. 50',
-          title:'Chatbot Iara: relating and interacting with data about the new coronavirus in Santa Cruz do Sul',
-          authors:'Martini, P.; Tomaz, M.; Priebe, P.; Konrath, Ma.; <strong>Konrath, M.</strong>; Bagatini, D.; Peranconi, D.',
-          desc:'Development of a conversational chatbot for collecting, relating, and disseminating epidemiological data about COVID-19 in the region of Santa Cruz do Sul, RS. The system integrated public data sources with an accessible interface for the population. Presented at the 1st Regional School of Computing of Rio Grande do Sul (ERCOMPRS 2020).',
-          doi:'doi.org/10.5753/ercomprs.2020.14295', href:'https://doi.org/10.5753/ercomprs.2020.14295',
-        },
-      ],
-      contactLabel: '07 — Contact',
-      contactTitle: "Let's talk",
-      contactEmailLabel: 'Email',
-      contactLocLabel: 'Location',
-      footerSub: 'Florianópolis, Brazil · UFSC · LabSEC',
-    },
+    const store = {
+      get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+      set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+    };
 
-    es: {
-      htmlLang: 'es',
-      nav: ['Sobre mí','Formación','Experiencia','Investigación','Publicaciones','Contacto'],
-      navIds: ['about','education','experience','research','publications','contact'],
-      heroTag: 'Ingeniero de Software e Investigador — UFSC',
-      heroRole: 'IA · PLN · Seguridad de la Información · Florianópolis, SC',
-      heroBio: 'Estudiante de Maestría en Ciencias de la Computación en la UFSC e investigador en el LabSEC. Trabajo en la intersección entre inteligencia artificial, procesamiento de lenguaje natural y seguridad de la información — con publicaciones en Springer LNCS y experiencia en desarrollo de software para infraestructura de identidad digital nacional.',
-      heroContact: 'Contáctame',
-      aboutLabel: '01 — Sobre mí',
-      aboutTitle: 'Seguridad\nmeets Lenguaje',
-      aboutTitleEm: 'meets',
-      aboutText: [
-        'Soy estudiante de Maestría en Ciencias de la Computación en la <strong>Universidad Federal de Santa Catarina (UFSC)</strong> e investigador en el <strong>Laboratorio de Seguridad en Computación (LabSEC)</strong>. Mi trabajo combina técnicas avanzadas de PLN con desafíos reales de protección y clasificación de datos sensibles.',
-        'Tengo tres capítulos publicados en 2026 por <strong>Springer Nature (LNCS)</strong>, con foco en modelos Transformer para clasificación de textos sensibles en escenarios de baja disponibilidad de datos — un problema crítico en contextos jurídicos, gubernamentales y corporativos.',
-        'Actualmente trabajo como Ingeniero de Software en el <strong>Operador Nacional del Registro Civil de Brasil</strong>, contribuyendo a la infraestructura de identidad digital nacional. Anteriormente desarrollé sistemas en el <strong>Tribunal de Justicia de Santa Catarina</strong> y participé en investigación de iniciación científica mediante el <strong>PET Computación — UFSC</strong>.',
-        'Soy de Santa Cruz do Sul, RS. Vivo y trabajo en Florianópolis, SC.',
-      ],
-      statMsc: 'Maestría — Ciencias de la Computación, UFSC',
-      statPubs: 'Artículos y capítulos publicados',
-      statSpringer: 'Capítulos Springer LNCS — 2026',
-      statYears: 'Años de experiencia profesional',
-      educationLabel: '02 — Formación',
-      educationTitle: 'Educación',
-      education: [
-        {
-          period: '2025 — presente', badge: 'En curso',
-          degree: 'Maestría en Ciencias de la Computación',
-          inst: 'Universidad Federal de Santa Catarina (UFSC) — Florianópolis, SC, Brasil',
-          desc: 'Investigación en inteligencia artificial aplicada a la seguridad de la información, con énfasis en modelos de lenguaje, clasificación de documentos sensibles y procesamiento de lenguaje natural en portugués. Vinculado al Laboratorio de Seguridad en Computación (LabSEC).',
-        },
-        {
-          period: '2021 — 2025', badge: null,
-          degree: 'Licenciatura en Ciencias de la Computación',
-          inst: 'Universidad Federal de Santa Catarina (UFSC) — Florianópolis, SC, Brasil',
-          desc: 'Grado con énfasis en inteligencia artificial, seguridad de la información y sistemas de software. Participó en el PET Computación (Programa de Educación Tutorial) y en el LabSEC, con actividades de enseñanza, investigación y extensión, e iniciación científica en PLN y seguridad.',
-        },
-      ],
-      skillsLabel: '03 — Competencias',
-      skillsTitle: 'Habilidades',
-      skillGroups: [
-        { title: 'IA & PLN', items: ['Transformers / HuggingFace','BERT, mBERT, BERTimbau','GAN-BERT','Fine-tuning de LLMs','Clasificación de texto','OCR inteligente','PyTorch','Scikit-learn'] },
-        { title: 'Desarrollo', items: ['Python','Java / Spring Boot','REST APIs','Git / GitHub','Linux','Docker','SQL'] },
-        { title: 'Dominio & Investigación', items: ['Seguridad de la información','Clasificación de datos sensibles','Evaluación de modelos NLP','Metodología científica','Redacción académica (EN/PT)','Identidad digital'] },
-      ],
-      expLabel: '04 — Experiencia',
-      expTitle: 'Trayectoria Profesional',
-      experience: [
-        {
-          period: 'oct 2025 — presente', duration: '6 meses',
-          role: 'Ingeniero de Software',
-          company: 'Operador Nacional — Registro Civil de Brasil',
-          location: 'São Paulo, SP · Remoto · Tiempo completo',
-          desc: 'Desarrollo de software para la plataforma nacional de registro civil e identidad digital de Brasil. Trabajo en sistemas de alta disponibilidad para la infraestructura de identidad de la población brasileña.',
-        },
-        {
-          period: 'abr 2024 — oct 2025', duration: '1 año 7 meses',
-          role: 'Investigador Becario',
-          company: 'LabSEC — Laboratorio de Seguridad en Computación, UFSC',
-          location: 'Florianópolis, SC, Brasil',
-          desc: 'Investigación aplicada en IA y PLN para la seguridad de la información. Incluye: clasificación de documentos sensibles con modelos Transformer (BERT, GAN-BERT), evaluación comparativa de modelos de lenguaje en portugués para contextos de seguridad, y desarrollo de sistema OCR inteligente para transcripción de documentos históricos. Resultados publicados en tres capítulos del Springer LNCS (2026).',
-        },
-        {
-          period: 'mar 2023 — dic 2023', duration: '10 meses',
-          role: 'Desarrollador de Software',
-          company: 'Tribunal de Justicia de Santa Catarina (TJSC)',
-          location: 'Florianópolis, SC · Pasantía',
-          desc: 'Desarrollo y mantenimiento de sistemas internos del poder judicial del estado de Santa Catarina, con requisitos estrictos de seguridad, disponibilidad y conformidad.',
-        },
-        {
-          period: 'ene 2022 — abr 2024', duration: '2 años 4 meses',
-          role: 'Becario — PET Computación',
-          company: 'PET Computación — Universidad Federal de Santa Catarina',
-          location: 'Florianópolis, SC',
-          desc: 'Participación en el Programa de Educación Tutorial del curso de Ciencias de la Computación, con actividades de enseñanza, investigación y extensión. Iniciación científica en proyectos de computación.',
-        },
-        {
-          period: 'ago 2020 — feb 2021', duration: '7 meses',
-          role: 'Aprendiz',
-          company: 'BAT — British American Tobacco',
-          location: 'Santa Cruz do Sul, RS · Medio tiempo',
-          desc: 'Programa de aprendiz joven en una de las mayores multinacionales del sector, con desarrollo de competencias profesionales y técnicas en un entorno corporativo de gran envergadura.',
-        },
-      ],
-      researchLabel: '05 — Investigación',
-      researchTitle: 'Áreas de\nInvestigación',
-      researchTitleEm: 'Investigación',
-      research: [
-        { idx:'01', title:'Clasificación de Documentos Sensibles', desc:'Aplicación de modelos Transformer — incluyendo BERT, mBERT, BERTimbau y GAN-BERT — para identificación y clasificación automática de documentos con información sensible. Foco en escenarios de escasez de datos etiquetados (low-data), frecuentes en contextos jurídicos y gubernamentales.' },
-        { idx:'02', title:'Evaluación de LLMs en Portugués', desc:'Análisis comparativo de modelos de lenguaje en portugués para contextos de seguridad de la información, investigando transferencia cross-lingual, alineación de dominio y estrategias de fine-tuning para textos jurídicos e institucionales.' },
-        { idx:'03', title:'OCR Inteligente para Archivos Históricos', desc:'Desarrollo de pipeline de reconocimiento óptico de caracteres combinado con modelos de lenguaje para transcripción, corrección e indexación de documentos históricos manuscritos o deteriorados, preservando el patrimonio documental.' },
-        { idx:'04', title:'IA Aplicada a la Seguridad de la Información', desc:'Investigación de métodos para integrar inteligencia artificial en sistemas que requieren confidencialidad, integridad y disponibilidad de datos, con énfasis en la automatización de procesos de gestión de información sensible en organizaciones críticas.' },
-      ],
-      pubLabel: '06 — Publicaciones',
-      pubTitle: 'Artículos y\nCapítulos de Libro',
-      publications: [
-        {
-          year:'2026', venue:'Springer Nature\nLNCS vol. 16222\np. 203–214',
-          title:'Limits and Surprises of Cross-Lingual BERT Under Data Scarcity: A Portuguese Case Study in Sensitive-Text Classification',
-          authors:'Fernandes Silvano, W.; Custódio, R. F.; <strong>Konrath, M.</strong>',
-          desc:'Estudio de caso que investiga los límites y comportamientos inesperados del BERT multilingüe en escenarios de escasez de datos para clasificación de textos sensibles en portugués. Evalúa la capacidad de transferencia cross-lingual y propone estrategias para mitigar la degradación del rendimiento con pocos ejemplos etiquetados.',
-          doi:'doi.org/10.1007/978-3-032-09044-7_15', href:'https://doi.org/10.1007/978-3-032-09044-7_15',
-        },
-        {
-          year:'2026', venue:'Springer Nature\nLNCS vol. 16222\np. 190–202',
-          title:'Rethinking GAN-BERT for Sensitive Text Classification: The Impact of Training Dynamics and Domain Alignment in Low-Data Scenarios',
-          authors:'Silvano, W. F.; <strong>Konrath, M.</strong>; Custódio, R. F.',
-          desc:'Reevaluación crítica de la arquitectura GAN-BERT para clasificación de textos sensibles, centrándose en el impacto de las dinámicas de entrenamiento adversarial y la alineación de dominio en entornos con pocos datos anotados. Propone ajustes que mejoran la estabilidad y la capacidad de generalización del modelo.',
-          doi:'doi.org/10.1007/978-3-032-09044-7_14', href:'https://doi.org/10.1007/978-3-032-09044-7_14',
-        },
-        {
-          year:'2026', venue:'Springer Nature\nLNCS vol. 16380\np. 85–103',
-          title:'Automation and Risk: Transformers Models Reshape Sensitive Information Management',
-          authors:'Silvano, W. F.; <strong>Konrath, M.</strong>; Mayr, L.; Custódio, R. F.',
-          desc:'Análisis exhaustivo de cómo los modelos Transformer están transformando la gestión de información sensible en las organizaciones. Evalúa los riesgos de automatización, sesgos de los modelos e implicaciones para el cumplimiento normativo y la privacidad de datos en contextos institucionales de alta criticidad.',
-          doi:'doi.org/10.1007/978-3-032-13714-2_7', href:'https://doi.org/10.1007/978-3-032-13714-2_7',
-        },
-        {
-          year:'2020', venue:'SBC\nERCOMPRS 2020\np. 50',
-          title:'Chatbot Iara: relacionando e interagindo com dados sobre o novo coronavírus em Santa Cruz do Sul',
-          authors:'Martini, P.; Tomaz, M.; Priebe, P.; Konrath, Ma.; <strong>Konrath, M.</strong>; Bagatini, D.; Peranconi, D.',
-          desc:'Desarrollo de un chatbot conversacional para la recolección, relacionamiento y difusión de datos epidemiológicos sobre COVID-19 en la región de Santa Cruz do Sul, RS. El sistema integró fuentes de datos públicas con una interfaz accesible para la población. Presentado en la I Escuela Regional de Computación de Rio Grande do Sul (ERCOMPRS 2020).',
-          doi:'doi.org/10.5753/ercomprs.2020.14295', href:'https://doi.org/10.5753/ercomprs.2020.14295',
-        },
-      ],
-      contactLabel: '07 — Contacto',
-      contactTitle: 'Hablemos',
-      contactEmailLabel: 'Correo',
-      contactLocLabel: 'Ubicación',
-      footerSub: 'Florianópolis, Brasil · UFSC · LabSEC',
-    },
-  };
+    /* Preencha para exibir. Campos vazios não aparecem no site.
+       photo e cv: caminhos de arquivos na mesma pasta do index.html. */
+    const SITE = {
+      photo: '',    // ex.: 'foto.jpg'
+      cv: '',       // ex.: 'cv-mauricio-konrath.pdf'
+      lattes: '',   // ex.: 'http://lattes.cnpq.br/0000000000000000'
+      scholar: '',  // ex.: 'https://scholar.google.com/citations?user=XXXX'
+      dblp: ''      // ex.: 'https://dblp.org/pid/000/0000.html'
+    };
 
-  T.pt.nav = ['Sobre','Formação','Projetos','Experiência','Pesquisa','Publicações','Contato'];
-  T.pt.navIds = ['about','education','projects','experience','research','publications','contact'];
-  T.pt.heroProjects = 'Ver projetos';
-  T.pt.menuOpen = 'Abrir menu';
-  T.pt.menuClose = 'Fechar menu';
-  T.pt.projectsLabel = '04 — Projetos';
-  T.pt.projectsTitle = 'Projetos Selecionados';
-  T.pt.projects = [
-    {
-      kicker: 'IA · PLN · Low-data',
-      title: 'Classificação de Textos Sensíveis',
-      desc: 'Linha de pesquisa aplicada a documentos jurídicos, governamentais e corporativos usando Transformers como BERT, mBERT, BERTimbau e GAN-BERT em cenários com poucos dados rotulados.',
-      tags: ['Transformers', 'BERTimbau', 'GAN-BERT', 'Português'],
-      links: [
-        { label: 'Ver pesquisa', href: '#research' },
-        { label: 'Ver publicações', href: '#publications' }
-      ]
-    },
-    {
-      kicker: 'OCR · LLMs · Patrimônio',
-      title: 'OCR Inteligente para Acervos Históricos',
-      desc: 'Pipeline para transcrição, correção e indexação de documentos históricos manuscritos ou degradados, combinando OCR com modelos de linguagem para preservar e tornar pesquisáveis coleções documentais.',
-      tags: ['OCR', 'Documentos históricos', 'Indexação', 'IA'],
-      links: [
-        { label: 'Ver pesquisa', href: '#research' },
-        { label: 'Entrar em contato', href: '#contact' }
-      ]
-    },
-    {
-      kicker: 'Software · Identidade Digital',
-      title: 'Infraestrutura Nacional de Registro Civil',
-      desc: 'Desenvolvimento de software para a plataforma nacional de registro civil e identidade digital do Brasil, com foco em disponibilidade, confiabilidade e segurança para sistemas críticos.',
-      tags: ['APIs', 'Alta disponibilidade', 'Segurança', 'Back-end'],
-      links: [
-        { label: 'Ver experiência', href: '#experience' },
-        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mauricio-konrath/' }
-      ]
+    const ME = '<strong>Konrath, M.</strong>';
+
+    /* Publicações. Quando o artigo do JURIX ou da CLEI for publicado,
+       preencha doi/href aqui e atualize a entrada correspondente em CITES. */
+    const PUBS = [
+      { id: 'jurix', year: 2026, title: 'Verifiable Attribution for Representative Personal AI',
+        authors: ME + '; Custódio, R.', doi: '', href: '' },
+      { id: 'clei', year: 2026, title: 'Calibration and Selective Prediction for Portuguese Judicial Document Classification',
+        authors: ME + '; Custódio, R.', doi: '', href: '' },
+      { id: 'xling', year: 2026, title: 'Limits and Surprises of Cross-Lingual BERT Under Data Scarcity: A Portuguese Case Study in Sensitive-Text Classification',
+        authors: 'Fernandes Silvano, W.; ' + ME + '; Custódio, R. F.',
+        doi: '10.1007/978-3-032-09044-7_15', href: 'https://doi.org/10.1007/978-3-032-09044-7_15',
+        code: 'https://github.com/mauriciokonrath/cross-lingual-bert' },
+      { id: 'ganbert', year: 2026, title: 'Rethinking GAN-BERT for Sensitive Text Classification: The Impact of Training Dynamics and Domain Alignment in Low-Data Scenarios',
+        authors: 'Silvano, W. F.; ' + ME + '; Custódio, R. F.',
+        doi: '10.1007/978-3-032-09044-7_14', href: 'https://doi.org/10.1007/978-3-032-09044-7_14',
+        code: 'https://github.com/mauriciokonrath/rethinking-ganbert' },
+      { id: 'risk', year: 2026, title: 'Automation and Risk: Transformers Models Reshape Sensitive Information Management',
+        authors: 'Silvano, W. F.; ' + ME + '; Mayr, L.; Custódio, R. F.',
+        doi: '10.1007/978-3-032-13714-2_7', href: 'https://doi.org/10.1007/978-3-032-13714-2_7' },
+      { id: 'iara', year: 2020, title: 'Chatbot Iara: relacionando e interagindo com dados sobre o novo coronavírus em Santa Cruz do Sul',
+        authors: 'Martini, P.; Tomaz, M.; Priebe, P.; Konrath, Ma.; ' + ME + '; Bagatini, D.; Peranconi, D.',
+        doi: '10.5753/ercomprs.2020.14295', href: 'https://doi.org/10.5753/ercomprs.2020.14295' }
+    ];
+
+    /* Citações: texto (formato Springer/LNCS) e BibTeX. Metadados dos capítulos LNCS
+       conferidos nas páginas do DOI na Springer. */
+    const CITES = {
+      jurix: {
+        text: 'Konrath, M., Custódio, R. (2026). Verifiable Attribution for Representative Personal AI. In: Legal Knowledge and Information Systems. JURIX 2026, 39th International Conference on Legal Knowledge and Information Systems. In press.',
+        bib: String.raw`@inproceedings{konrath2026verifiable,
+  author    = {Konrath, Maur{\'\i}cio and Cust{\'o}dio, Ricardo},
+  title     = {Verifiable Attribution for Representative Personal {AI}},
+  booktitle = {Legal Knowledge and Information Systems ({JURIX} 2026), 39th International Conference on Legal Knowledge and Information Systems},
+  year      = {2026},
+  note      = {In press}
+}`
+      },
+      clei: {
+        text: 'Konrath, M., Custódio, R. (2026). Calibration and Selective Prediction for Portuguese Judicial Document Classification. In: CLEI 2026. Accepted for publication.',
+        bib: String.raw`@inproceedings{konrath2026calibration,
+  author    = {Konrath, Maur{\'\i}cio and Cust{\'o}dio, Ricardo},
+  title     = {Calibration and Selective Prediction for {Portuguese} Judicial Document Classification},
+  booktitle = {{CLEI} 2026},
+  year      = {2026},
+  note      = {Accepted for publication}
+}`
+      },
+      xling: {
+        text: 'Fernandes Silvano, W., Konrath, M., Custódio, R.F. (2026). Limits and Surprises of Cross-Lingual BERT Under Data Scarcity: A Portuguese Case Study in Sensitive-Text Classification. In: Martínez-Villaseñor, L., Vázquez, R.A., Ochoa-Ruiz, G. (eds) Advances in Soft Computing. MICAI 2025. Lecture Notes in Computer Science, vol 16222, pp. 203–214. Springer, Cham. https://doi.org/10.1007/978-3-032-09044-7_15',
+        bib: String.raw`@inproceedings{fernandessilvano2026limits,
+  author    = {Fernandes Silvano, Wellington and Konrath, Maur{\'\i}cio and Cust{\'o}dio, Ricardo F.},
+  editor    = {Mart{\'\i}nez-Villase{\~n}or, Lourdes and V{\'a}zquez, Roberto A. and Ochoa-Ruiz, Gilberto},
+  title     = {Limits and Surprises of Cross-Lingual {BERT} Under Data Scarcity: A {Portuguese} Case Study in Sensitive-Text Classification},
+  booktitle = {Advances in Soft Computing ({MICAI} 2025)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16222},
+  pages     = {203--214},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2026},
+  isbn      = {978-3-032-09044-7},
+  doi       = {10.1007/978-3-032-09044-7_15}
+}`
+      },
+      ganbert: {
+        text: 'Silvano, W.F., Konrath, M., Custódio, R.F. (2026). Rethinking GAN-BERT for Sensitive Text Classification: The Impact of Training Dynamics and Domain Alignment in Low-Data Scenarios. In: Martínez-Villaseñor, L., Vázquez, R.A., Ochoa-Ruiz, G. (eds) Advances in Soft Computing. MICAI 2025. Lecture Notes in Computer Science, vol 16222, pp. 190–202. Springer, Cham. https://doi.org/10.1007/978-3-032-09044-7_14',
+        bib: String.raw`@inproceedings{silvano2026rethinking,
+  author    = {Silvano, Wellington Fernandes and Konrath, Maur{\'\i}cio and Cust{\'o}dio, Ricardo F.},
+  editor    = {Mart{\'\i}nez-Villase{\~n}or, Lourdes and V{\'a}zquez, Roberto A. and Ochoa-Ruiz, Gilberto},
+  title     = {Rethinking {GAN-BERT} for Sensitive Text Classification: The Impact of Training Dynamics and Domain Alignment in Low-Data Scenarios},
+  booktitle = {Advances in Soft Computing ({MICAI} 2025)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16222},
+  pages     = {190--202},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2026},
+  isbn      = {978-3-032-09044-7},
+  doi       = {10.1007/978-3-032-09044-7_14}
+}`
+      },
+      risk: {
+        text: 'Silvano, W.F., Konrath, M., Mayr, L., Custódio, R.F. (2026). Automation and Risk: Transformers Models Reshape Sensitive Information Management. In: Hubballi, N., Verma, R., Rudrapatna K., S. (eds) Information Systems Security. ICISS 2025. Lecture Notes in Computer Science, vol 16380, pp. 85–103. Springer, Cham. https://doi.org/10.1007/978-3-032-13714-2_7',
+        bib: String.raw`@inproceedings{silvano2026automation,
+  author    = {Silvano, Wellington Fernandes and Konrath, Maur{\'\i}cio and Mayr, Lucas and Cust{\'o}dio, Ricardo Felipe},
+  editor    = {Hubballi, Neminath and Verma, Rakesh and {Rudrapatna K.}, Shyamasundar},
+  title     = {Automation and Risk: Transformers Models Reshape Sensitive Information Management},
+  booktitle = {Information Systems Security ({ICISS} 2025)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16380},
+  pages     = {85--103},
+  publisher = {Springer},
+  address   = {Cham},
+  year      = {2026},
+  isbn      = {978-3-032-13714-2},
+  doi       = {10.1007/978-3-032-13714-2_7}
+}`
+      },
+      iara: {
+        text: 'Martini, P., Tomaz, M., Priebe, P., Konrath, Ma., Konrath, M., Bagatini, D., Peranconi, D. (2020). Chatbot Iara: relacionando e interagindo com dados sobre o novo coronavírus em Santa Cruz do Sul. In: Anais da I Escola Regional de Computação do Rio Grande do Sul (ERCOMPRS 2020), p. 50. SBC. https://doi.org/10.5753/ercomprs.2020.14295',
+        bib: String.raw`@inproceedings{martini2020iara,
+  author    = {Martini, P. and Tomaz, M. and Priebe, P. and Konrath, Ma. and Konrath, Maur{\'\i}cio and Bagatini, D. and Peranconi, D.},
+  title     = {Chatbot {Iara}: relacionando e interagindo com dados sobre o novo coronav{\'\i}rus em {Santa Cruz do Sul}},
+  booktitle = {Anais da I Escola Regional de Computa{\c{c}}{\~a}o do Rio Grande do Sul ({ERCOMPRS} 2020)},
+  pages     = {50},
+  publisher = {Sociedade Brasileira de Computa{\c{c}}{\~a}o},
+  year      = {2020},
+  doi       = {10.5753/ercomprs.2020.14295}
+}`
+      }
+    };
+
+    const EXP = [
+      { key: 'onr', start: '2025-10', end: null },
+      { key: 'labsec', start: '2024-04', end: '2025-10' },
+      { key: 'tjsc', start: '2023-03', end: '2023-12' },
+      { key: 'pet', start: '2022-01', end: '2024-04' }
+    ];
+
+    /* Notícias: data no formato AAAA-MM; o texto de cada idioma fica em T.<idioma>.news. */
+    const NEWS = [
+      { id: 'jurixTalk', date: '2026-12' },
+      { id: 'iciss', date: '2025-12' },
+      { id: 'micai', date: '2025-10' }
+    ];
+
+    const PAPER_JURIX = '<em>Verifiable Attribution for Representative Personal AI</em>';
+
+    const NAV_IDS = ['about', 'research', 'publications', 'activities', 'experience', 'education', 'contact'];
+
+    const CONTACT = [
+      { k: 'email', v: 'mauriciokonrat@gmail.com', href: 'mailto:mauriciokonrat@gmail.com' },
+      { k: 'inst', v: 'mauricio.konrath@posgrad.ufsc.br', href: 'mailto:mauricio.konrath@posgrad.ufsc.br' },
+      { k: 'orcid', v: '0000-0003-2383-9880', href: 'https://orcid.org/0000-0003-2383-9880' },
+      { k: 'lattes', v: SITE.lattes.replace(/^https?:\/\//, ''), href: SITE.lattes },
+      { k: 'scholar', v: 'Google Scholar', href: SITE.scholar },
+      { k: 'dblp', v: 'dblp', href: SITE.dblp },
+      { k: 'springer', v: 'Springer Nature', href: 'https://link.springer.com/researchers/84052713SN' },
+      { k: 'github', v: 'github.com/mauriciokonrath', href: 'https://github.com/mauriciokonrath' },
+      { k: 'linkedin', v: 'linkedin.com/in/mauricio-konrath', href: 'https://www.linkedin.com/in/mauricio-konrath/' }
+    ].filter((c) => c.href);
+
+    const HERO_LINKS = [
+      { k: 'email', href: 'mailto:mauriciokonrat@gmail.com' },
+      { k: 'cv', href: SITE.cv },
+      { k: 'orcid', href: 'https://orcid.org/0000-0003-2383-9880' },
+      { k: 'lattes', href: SITE.lattes },
+      { k: 'scholar', href: SITE.scholar },
+      { k: 'github', href: 'https://github.com/mauriciokonrath' },
+      { k: 'linkedin', href: 'https://www.linkedin.com/in/mauricio-konrath/' }
+    ].filter((l) => l.href);
+
+    const T = {
+      pt: {
+        htmlLang: 'pt-BR',
+        metaDesc: 'Maurício Konrath, mestrando em Ciência da Computação na UFSC e engenheiro de software no ON-RCPN. Pesquisa em agentes pessoais de IA representativos, delegação verificável e confiabilidade de classificadores jurídicos.',
+        skip: 'Pular para o conteúdo',
+        navLabel: 'Seções',
+        nav: ['Sobre', 'Pesquisa', 'Publicações', 'Atividades', 'Experiência', 'Formação', 'Contato'],
+        menuOpen: 'Abrir menu', menuClose: 'Fechar menu',
+        toDark: 'Usar tema escuro', toLight: 'Usar tema claro',
+        intro: 'Mestrando em Ciência da Computação na UFSC e engenheiro de software no ON-RCPN, em Florianópolis. Pesquiso agentes pessoais de IA que agem em nome de pessoas e como verificar, depois, se cada ato ficou dentro do que foi autorizado.',
+        linkLabels: { email: 'E-mail', cv: 'CV (PDF)', orcid: 'ORCID', lattes: 'Lattes', scholar: 'Google Scholar', github: 'GitHub', linkedin: 'LinkedIn' },
+        photoAlt: 'Foto de Maurício Konrath',
+        newsTitle: 'Notícias',
+        news: {
+          jurixTalk: 'Apresentação de ' + PAPER_JURIX + ' no JURIX 2026, em Toulouse, França (8 a 10 de dezembro).',
+          iciss: 'Publicado nos anais do ICISS 2025 (LNCS 16380): <em>Automation and Risk: Transformers Models Reshape Sensitive Information Management</em>.',
+          micai: 'Dois artigos publicados nos anais do MICAI 2025 (LNCS 16222).'
+        },
+        actTitle: 'Atividades acadêmicas',
+        talksTitle: 'Apresentações',
+        talks: [
+          { when: '8–10 dez 2026', title: 'Verifiable Attribution for Representative Personal AI',
+            org: 'JURIX 2026, 39th International Conference on Legal Knowledge and Information Systems', place: 'Toulouse, França' }
+        ],
+        teachTitle: 'Docência',
+        teaching: [
+          { when: '2026.2', title: 'INE5448, Tópicos Especiais em Aplicações Tecnológicas I', org: 'Ciência da Computação, UFSC',
+            desc: 'Disciplina sobre segurança e inteligência artificial, com o Prof. Ricardo Custódio. Preparei o material e uma aula prática sobre automação com n8n, APIs e modelos de linguagem.' }
+        ],
+        code: 'Código',
+        aboutTitle: 'Sobre',
+        aboutText: [
+          'Faço mestrado no Programa de Pós-Graduação em Ciência da Computação (PPGCC) da UFSC, com orientação do Prof. Ricardo Custódio. Na dissertação, <em>Personal AI como Agente Representativo</em>, estudo o que é preciso, técnica e juridicamente, para que um agente baseado em LLM pratique atos digitais em nome de uma pessoa identificada de forma válida e segura.',
+          'Meu trabalho mistura computação e direito: delegação verificável, atribuição jurídica de atos praticados por agentes de IA e a confiabilidade de modelos de linguagem usados em processos judiciais.',
+          'Nasci em Santa Cruz do Sul (RS) e moro em Florianópolis (SC).'
+        ],
+        skills: [
+          ['IA e PLN', 'Transformers e Hugging Face, BERT, BERTimbau, GAN-BERT, calibração e predição seletiva, agentes baseados em LLMs, PyTorch, scikit-learn, OCR.'],
+          ['Engenharia', 'Python, Java e Spring Boot, APIs REST, Docker, Linux, SQL, Git.'],
+          ['Segurança e direito', 'Delegação e atribuição verificáveis, identidade digital (did:web, WebAuthn), classificação de dados sensíveis, revisões sistemáticas e de escopo.']
+        ],
+        researchTitle: 'Pesquisa',
+        relatedLabel: 'Ver',
+        research: [
+          { title: 'Agentes pessoais representativos',
+            desc: 'Credenciais válidas não dizem, sozinhas, se um ato praticado por um agente de IA ficou dentro do mandato, se foi produzido pelo agente certo ou se pode ser atribuído juridicamente à pessoa. Estudo requisitos e mecanismos para delegações que possam ser limitadas, revogadas, verificadas e contestadas.',
+            rel: [{ label: 'JURIX 2026', href: '#pub-jurix' }] },
+          { title: 'Confiabilidade de classificadores jurídicos',
+            desc: 'Calibração probabilística e predição seletiva em classificadores de documentos judiciais em português, para que o modelo saiba quando se abster e passar o caso a um revisor humano.',
+            rel: [{ label: 'CLEI 2026', href: '#pub-clei' }] },
+          { title: 'Classificação de textos sensíveis com poucos dados',
+            desc: 'Modelos Transformer (BERT, mBERT, BERTimbau, GAN-BERT) para encontrar informação sensível em documentos jurídicos, governamentais e corporativos quando há poucos exemplos rotulados.',
+            rel: [{ label: 'BERT multilíngue', href: '#pub-xling' }, { label: 'GAN-BERT', href: '#pub-ganbert' }, { label: 'Automação e risco', href: '#pub-risk' }] },
+          { title: 'OCR para acervos históricos',
+            desc: 'Combinação de OCR com modelos de linguagem para transcrever, corrigir e indexar documentos históricos manuscritos ou degradados.',
+            note: 'Pesquisa aplicada no LabSEC, 2024–2025.' }
+        ],
+        pubTitle: 'Publicações',
+        pubNote: (n) => n + ' publicações',
+        abstract: 'Resumo',
+        copyCite: 'Copiar citação', copyBib: 'BibTeX', citeCopied: 'Citação copiada', bibCopied: 'BibTeX copiado', copyFail: 'Não foi possível copiar',
+        pubs: {
+          jurix: { status: 'aceito, no prelo', venue: 'JURIX 2026, 39th International Conference on Legal Knowledge and Information Systems',
+            desc: 'Revisão de escopo sistemática com mapeamento de evidências: de 4.289 registros auditáveis, 651 fontes compõem o mapa final, que identifica cinco lacunas (G1–G5) entre mecanismos técnicos e jurídicos. As lacunas são consolidadas em um modelo de requisitos independente de implementação (R1–R18), organizado em torno de uma cadeia de evidência no nível do ato que considera derrotadores (mandante, mandato, agente, contexto de execução, ato e evidência contestável), avaliada por quatro verificações que alimentam uma decisão de Negar, Escalar ou Permitir. Os doze cenários pré-especificados reproduziram seus resultados de referência, e cada remoção deliberada de controle produziu efeito observável na decisão ou na evidência.' },
+          clei: { status: 'aceito', venue: 'CLEI 2026, Conferência Latino-Americana de Informática',
+            desc: 'Avaliação empírica de calibração probabilística e predição seletiva na classificação de documentos judiciais em português, com o corpus TJAL, comparando três modelos Transformer e três baselines clássicos em validação cruzada estratificada com 5 partições. Todos os modelos estão descalibrados antes da correção pós-hoc; o Temperature Scaling reduz de forma consistente o erro médio de calibração, embora a confiabilidade local no pior caso continue limitada para vários Transformers. Em um protocolo exploratório de seleção de limiar, a melhor configuração seletiva atinge 98,32% de acurácia com 90% de cobertura.' },
+          xling: { venue: 'MICAI 2025, Advances in Soft Computing, Springer LNCS vol. 16222, p. 203–214',
+            desc: 'Estudo de caso sobre os limites e comportamentos inesperados do BERT multilíngue na classificação de textos sensíveis em português com escassez de dados. Avalia a transferência entre línguas e propõe estratégias para mitigar a queda de desempenho com poucos exemplos rotulados.' },
+          ganbert: { venue: 'MICAI 2025, Advances in Soft Computing, Springer LNCS vol. 16222, p. 190–202',
+            desc: 'Reavaliação crítica da arquitetura GAN-BERT para classificação de textos sensíveis, com foco no impacto das dinâmicas de treinamento adversarial e do alinhamento de domínio em cenários com poucos dados anotados. Propõe ajustes que melhoram a estabilidade e a generalização do modelo.' },
+          risk: { venue: 'ICISS 2025, Information Systems Security, Springer LNCS vol. 16380, p. 85–103',
+            desc: 'Análise de como modelos Transformer estão transformando a gestão de informações sensíveis em organizações, avaliando riscos de automação, vieses de modelos e implicações para conformidade e privacidade em contextos institucionais críticos.' },
+          iara: { venue: 'ERCOMPRS 2020, SBC, p. 50',
+            desc: 'Chatbot conversacional para coleta, relacionamento e disseminação de dados epidemiológicos sobre a COVID-19 na região de Santa Cruz do Sul (RS), integrando fontes de dados públicas a uma interface acessível. Apresentado na I Escola Regional de Computação do Rio Grande do Sul.' }
+        },
+        expTitle: 'Experiência',
+        present: 'atual',
+        months: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'],
+        dur: (y, m) => [y ? y + (y > 1 ? ' anos' : ' ano') : '', m ? m + (m > 1 ? ' meses' : ' mês') : ''].filter(Boolean).join(' e '),
+        exp: {
+          onr: { role: 'Engenheiro de software', org: 'ON-RCPN, Operador Nacional do Registro Civil de Pessoas Naturais', loc: 'Remoto',
+            desc: 'Desenvolvimento de software para a plataforma nacional de registro civil e identidade digital.' },
+          labsec: { role: 'Pesquisador bolsista', org: 'LabSEC, Laboratório de Segurança em Computação da UFSC', loc: 'Florianópolis',
+            desc: 'Classificação de documentos sensíveis com modelos Transformer (BERT, GAN-BERT), avaliação de modelos de linguagem em português e um sistema de OCR para documentos históricos. O trabalho rendeu três artigos completos publicados nos LNCS (MICAI 2025 e ICISS 2025).' },
+          tjsc: { role: 'Estagiário de desenvolvimento de software', org: 'Tribunal de Justiça de Santa Catarina', loc: 'Florianópolis',
+            desc: 'Desenvolvimento e manutenção de sistemas internos do Judiciário catarinense.' },
+          pet: { role: 'Bolsista', org: 'PET Computação, UFSC', loc: 'Florianópolis',
+            desc: 'Ensino, pesquisa e extensão no Programa de Educação Tutorial do curso de Ciência da Computação, com iniciação científica.' }
+        },
+        eduTitle: 'Formação',
+        edu: [
+          { period: '2025 – atual', note: 'em andamento', degree: 'Mestrado em Ciência da Computação', inst: 'PPGCC, Universidade Federal de Santa Catarina',
+            desc: 'Dissertação: <em>Personal AI como Agente Representativo</em>. Orientador: Prof. Ricardo Custódio.' },
+          { period: '2021 – 2025', degree: 'Bacharelado em Ciência da Computação', inst: 'Universidade Federal de Santa Catarina',
+            desc: 'Participei do PET Computação e do LabSEC.' }
+        ],
+        contactTitle: 'Contato',
+        contactLede: 'O jeito mais rápido de falar comigo é por e-mail.',
+        contactLabels: { email: 'E-mail', inst: 'E-mail institucional', orcid: 'ORCID', lattes: 'Currículo Lattes', scholar: 'Google Scholar', dblp: 'dblp', springer: 'Perfil na Springer', github: 'GitHub', linkedin: 'LinkedIn' },
+        updated: 'Atualizado em novembro de 2026'
+      },
+
+      en: {
+        htmlLang: 'en',
+        metaDesc: 'Maurício Konrath, MSc student in Computer Science at UFSC and software engineer at ON-RCPN. Research on representative personal AI agents, verifiable delegation, and the reliability of legal classifiers.',
+        skip: 'Skip to content',
+        navLabel: 'Sections',
+        nav: ['About', 'Research', 'Publications', 'Activities', 'Experience', 'Education', 'Contact'],
+        menuOpen: 'Open menu', menuClose: 'Close menu',
+        toDark: 'Use dark theme', toLight: 'Use light theme',
+        intro: 'MSc student in Computer Science at UFSC and software engineer at ON-RCPN, in Florianópolis, Brazil. I study personal AI agents that act on behalf of people, and how to check afterwards whether each act stayed within what was authorised.',
+        linkLabels: { email: 'Email', cv: 'CV (PDF)', orcid: 'ORCID', lattes: 'Lattes', scholar: 'Google Scholar', github: 'GitHub', linkedin: 'LinkedIn' },
+        photoAlt: 'Photo of Maurício Konrath',
+        newsTitle: 'News',
+        news: {
+          jurixTalk: 'Talk: ' + PAPER_JURIX + ' at JURIX 2026, Toulouse, France (8–10 December).',
+          iciss: 'Published in the ICISS 2025 proceedings (LNCS 16380): <em>Automation and Risk: Transformers Models Reshape Sensitive Information Management</em>.',
+          micai: 'Two papers published in the MICAI 2025 proceedings (LNCS 16222).'
+        },
+        actTitle: 'Academic activities',
+        talksTitle: 'Talks',
+        talks: [
+          { when: '8–10 Dec 2026', title: 'Verifiable Attribution for Representative Personal AI',
+            org: 'JURIX 2026, 39th International Conference on Legal Knowledge and Information Systems', place: 'Toulouse, France' }
+        ],
+        teachTitle: 'Teaching',
+        teaching: [
+          { when: '2026.2', title: 'INE5448, Special Topics in Technological Applications I', org: 'Computer Science, UFSC',
+            desc: 'A course on security and artificial intelligence, with Prof. Ricardo Custódio. I prepared the materials and a hands-on class on automation with n8n, APIs, and language models.' }
+        ],
+        code: 'Code',
+        aboutTitle: 'About',
+        aboutText: [
+          'I’m an MSc student in the Graduate Program in Computer Science (PPGCC) at UFSC, advised by Prof. Ricardo Custódio. My dissertation looks at what it takes, technically and legally, for an LLM-based agent to carry out digital acts on behalf of an identified person in a valid and secure way.',
+          'My work sits between computing and law: verifiable delegation, legal attribution of acts performed by AI agents, and the reliability of language models used in court proceedings.',
+          'I was born in Santa Cruz do Sul (RS) and live in Florianópolis (SC).'
+        ],
+        skills: [
+          ['AI and NLP', 'Transformers and Hugging Face, BERT, BERTimbau, GAN-BERT, calibration and selective prediction, LLM-based agents, PyTorch, scikit-learn, OCR.'],
+          ['Engineering', 'Python, Java and Spring Boot, REST APIs, Docker, Linux, SQL, Git.'],
+          ['Security and law', 'Verifiable delegation and attribution, digital identity (did:web, WebAuthn), sensitive data classification, systematic and scoping reviews.']
+        ],
+        researchTitle: 'Research',
+        relatedLabel: 'See',
+        research: [
+          { title: 'Representative personal AI agents',
+            desc: 'Valid credentials alone don’t tell you whether an act performed by an AI agent stayed within the mandate, came from the right agent, or can be legally attributed to the person. I work on requirements and mechanisms for delegation that can be bounded, revoked, verified, and contested.',
+            rel: [{ label: 'JURIX 2026', href: '#pub-jurix' }] },
+          { title: 'Reliability of legal classifiers',
+            desc: 'Probabilistic calibration and selective prediction for classifiers of Portuguese judicial documents, so the model knows when to abstain and pass the case to a human reviewer.',
+            rel: [{ label: 'CLEI 2026', href: '#pub-clei' }] },
+          { title: 'Sensitive-text classification with little data',
+            desc: 'Transformer models (BERT, mBERT, BERTimbau, GAN-BERT) for finding sensitive information in legal, government, and corporate documents when there are few labelled examples.',
+            rel: [{ label: 'Cross-lingual BERT', href: '#pub-xling' }, { label: 'GAN-BERT', href: '#pub-ganbert' }, { label: 'Automation and risk', href: '#pub-risk' }] },
+          { title: 'OCR for historical archives',
+            desc: 'Combining optical character recognition with language models to transcribe, correct, and index handwritten or degraded historical documents.',
+            note: 'Applied research at LabSEC, 2024–2025.' }
+        ],
+        pubTitle: 'Publications',
+        pubNote: (n) => n + ' publications',
+        abstract: 'Abstract',
+        copyCite: 'Copy citation', copyBib: 'BibTeX', citeCopied: 'Citation copied', bibCopied: 'BibTeX copied', copyFail: 'Could not copy',
+        pubs: {
+          jurix: { status: 'accepted, in press', venue: 'JURIX 2026, 39th International Conference on Legal Knowledge and Information Systems',
+            desc: 'A systematic scoping review with evidence mapping: from 4,289 auditable records, 651 sources form the final evidence map, which identifies five interface gaps (G1–G5) between technical and legal mechanisms. The gaps are consolidated into an implementation-independent requirements model (R1–R18) built around a defeater-aware, act-level evidence chain (principal, mandate, agent, execution context, act, and contestable evidence), evaluated through four act-level gates that feed a Deny, Escalate, or Allow decision. All twelve pre-specified scenarios reproduced their reference outcomes, and every deliberate control removal produced an observable decision or evidence effect.' },
+          clei: { status: 'accepted', venue: 'CLEI 2026, Latin American Computing Conference',
+            desc: 'An empirical evaluation of probabilistic calibration and selective prediction for Portuguese judicial document classification on the TJAL corpus, comparing three Transformer models and three classical baselines under stratified 5-fold cross-validation. All models are miscalibrated before post-hoc correction; Temperature Scaling consistently lowers average calibration error, although worst-case local reliability remains limited for several Transformers. Under an exploratory threshold-selection protocol, the best selective configuration reaches 98.32% accuracy at 90% coverage.' },
+          xling: { venue: 'MICAI 2025, Advances in Soft Computing, Springer LNCS vol. 16222, pp. 203–214',
+            desc: 'A case study of the limits and unexpected behaviour of multilingual BERT for sensitive-text classification in Portuguese under data scarcity. It evaluates cross-lingual transfer and proposes strategies to mitigate performance loss with few labelled examples.' },
+          ganbert: { venue: 'MICAI 2025, Advances in Soft Computing, Springer LNCS vol. 16222, pp. 190–202',
+            desc: 'A critical reassessment of GAN-BERT for sensitive-text classification, focusing on adversarial training dynamics and domain alignment in low-annotation settings. It proposes adjustments that improve model stability and generalisation.' },
+          risk: { venue: 'ICISS 2025, Information Systems Security, Springer LNCS vol. 16380, pp. 85–103',
+            desc: 'An analysis of how Transformer models are changing sensitive information management in organisations, assessing automation risks, model bias, and implications for compliance and privacy in critical institutional settings.' },
+          iara: { venue: 'ERCOMPRS 2020, SBC, p. 50',
+            title: 'Chatbot Iara: relating and interacting with data about the new coronavirus in Santa Cruz do Sul',
+            desc: 'A conversational chatbot for collecting, relating, and disseminating COVID-19 epidemiological data in the Santa Cruz do Sul region (RS), connecting public data sources to an accessible interface. Presented at the 1st Regional School of Computing of Rio Grande do Sul.' }
+        },
+        expTitle: 'Experience',
+        present: 'present',
+        months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        dur: (y, m) => [y ? y + (y > 1 ? ' years' : ' year') : '', m ? m + (m > 1 ? ' months' : ' month') : ''].filter(Boolean).join(' '),
+        exp: {
+          onr: { role: 'Software engineer', org: 'ON-RCPN, National Civil Registry Operator of Brazil', loc: 'Remote',
+            desc: 'Software development for Brazil’s national civil registry and digital identity platform.' },
+          labsec: { role: 'Research fellow', org: 'LabSEC, Computer Security Laboratory, UFSC', loc: 'Florianópolis',
+            desc: 'Sensitive document classification with Transformer models (BERT, GAN-BERT), evaluation of Portuguese language models, and an OCR system for historical documents. The work led to three full papers published in LNCS (MICAI 2025 and ICISS 2025).' },
+          tjsc: { role: 'Software development intern', org: 'Santa Catarina Court of Justice', loc: 'Florianópolis',
+            desc: 'Development and maintenance of internal systems for the Santa Catarina judiciary.' },
+          pet: { role: 'Scholarship holder', org: 'PET Computing, UFSC', loc: 'Florianópolis',
+            desc: 'Teaching, research, and outreach in the Computer Science Tutorial Education Programme, including undergraduate research.' }
+        },
+        eduTitle: 'Education',
+        edu: [
+          { period: '2025 – present', note: 'ongoing', degree: 'MSc in Computer Science', inst: 'PPGCC, Federal University of Santa Catarina',
+            desc: 'Dissertation on representative personal AI agents. Advisor: Prof. Ricardo Custódio.' },
+          { period: '2021 – 2025', degree: 'BSc in Computer Science', inst: 'Federal University of Santa Catarina',
+            desc: 'Member of PET Computing and LabSEC.' }
+        ],
+        contactTitle: 'Contact',
+        contactLede: 'Email is the quickest way to reach me.',
+        contactLabels: { email: 'Email', inst: 'University email', orcid: 'ORCID', lattes: 'Lattes CV', scholar: 'Google Scholar', dblp: 'dblp', springer: 'Springer profile', github: 'GitHub', linkedin: 'LinkedIn' },
+        updated: 'Last updated November 2026'
+      },
+
+      es: {
+        htmlLang: 'es',
+        metaDesc: 'Maurício Konrath, estudiante de maestría en Ciencias de la Computación en la UFSC e ingeniero de software en el ON-RCPN. Investigación sobre agentes personales de IA representativos, delegación verificable y confiabilidad de clasificadores jurídicos.',
+        skip: 'Ir al contenido',
+        navLabel: 'Secciones',
+        nav: ['Sobre mí', 'Investigación', 'Publicaciones', 'Actividades', 'Experiencia', 'Formación', 'Contacto'],
+        menuOpen: 'Abrir menú', menuClose: 'Cerrar menú',
+        toDark: 'Usar tema oscuro', toLight: 'Usar tema claro',
+        intro: 'Estudiante de maestría en Ciencias de la Computación en la UFSC e ingeniero de software en el ON-RCPN, en Florianópolis. Investigo agentes personales de IA que actúan en nombre de personas y cómo verificar, después, si cada acto se mantuvo dentro de lo autorizado.',
+        linkLabels: { email: 'Correo', cv: 'CV (PDF)', orcid: 'ORCID', lattes: 'Lattes', scholar: 'Google Scholar', github: 'GitHub', linkedin: 'LinkedIn' },
+        photoAlt: 'Foto de Maurício Konrath',
+        newsTitle: 'Noticias',
+        news: {
+          jurixTalk: 'Presentación de ' + PAPER_JURIX + ' en JURIX 2026, Toulouse, Francia (8 al 10 de diciembre).',
+          iciss: 'Publicado en las actas de ICISS 2025 (LNCS 16380): <em>Automation and Risk: Transformers Models Reshape Sensitive Information Management</em>.',
+          micai: 'Dos artículos publicados en las actas de MICAI 2025 (LNCS 16222).'
+        },
+        actTitle: 'Actividades académicas',
+        talksTitle: 'Presentaciones',
+        talks: [
+          { when: '8–10 dic 2026', title: 'Verifiable Attribution for Representative Personal AI',
+            org: 'JURIX 2026, 39th International Conference on Legal Knowledge and Information Systems', place: 'Toulouse, Francia' }
+        ],
+        teachTitle: 'Docencia',
+        teaching: [
+          { when: '2026.2', title: 'INE5448, Tópicos Especiales en Aplicaciones Tecnológicas I', org: 'Ciencias de la Computación, UFSC',
+            desc: 'Asignatura sobre seguridad e inteligencia artificial, con el Prof. Ricardo Custódio. Preparé el material y una clase práctica sobre automatización con n8n, APIs y modelos de lenguaje.' }
+        ],
+        code: 'Código',
+        aboutTitle: 'Sobre mí',
+        aboutText: [
+          'Curso la maestría en el Programa de Posgrado en Ciencias de la Computación (PPGCC) de la UFSC, bajo la dirección del Prof. Ricardo Custódio. En la tesis estudio qué hace falta, técnica y jurídicamente, para que un agente basado en LLM realice actos digitales en nombre de una persona identificada de forma válida y segura.',
+          'Mi trabajo combina computación y derecho: delegación verificable, atribución jurídica de actos realizados por agentes de IA y confiabilidad de los modelos de lenguaje usados en procesos judiciales.',
+          'Nací en Santa Cruz do Sul (RS) y vivo en Florianópolis (SC).'
+        ],
+        skills: [
+          ['IA y PLN', 'Transformers y Hugging Face, BERT, BERTimbau, GAN-BERT, calibración y predicción selectiva, agentes basados en LLMs, PyTorch, scikit-learn, OCR.'],
+          ['Ingeniería', 'Python, Java y Spring Boot, APIs REST, Docker, Linux, SQL, Git.'],
+          ['Seguridad y derecho', 'Delegación y atribución verificables, identidad digital (did:web, WebAuthn), clasificación de datos sensibles, revisiones sistemáticas y de alcance.']
+        ],
+        researchTitle: 'Investigación',
+        relatedLabel: 'Ver',
+        research: [
+          { title: 'Agentes personales representativos',
+            desc: 'Las credenciales válidas no dicen, por sí solas, si un acto realizado por un agente de IA se mantuvo dentro del mandato, si lo produjo el agente correcto o si puede atribuirse jurídicamente a la persona. Estudio requisitos y mecanismos para delegaciones que puedan acotarse, revocarse, verificarse e impugnarse.',
+            rel: [{ label: 'JURIX 2026', href: '#pub-jurix' }] },
+          { title: 'Confiabilidad de clasificadores jurídicos',
+            desc: 'Calibración probabilística y predicción selectiva en clasificadores de documentos judiciales en portugués, para que el modelo sepa cuándo abstenerse y pasar el caso a un revisor humano.',
+            rel: [{ label: 'CLEI 2026', href: '#pub-clei' }] },
+          { title: 'Clasificación de textos sensibles con pocos datos',
+            desc: 'Modelos Transformer (BERT, mBERT, BERTimbau, GAN-BERT) para encontrar información sensible en documentos jurídicos, gubernamentales y corporativos cuando hay pocos ejemplos etiquetados.',
+            rel: [{ label: 'BERT multilingüe', href: '#pub-xling' }, { label: 'GAN-BERT', href: '#pub-ganbert' }, { label: 'Automatización y riesgo', href: '#pub-risk' }] },
+          { title: 'OCR para archivos históricos',
+            desc: 'Combinación de reconocimiento óptico de caracteres con modelos de lenguaje para transcribir, corregir e indexar documentos históricos manuscritos o deteriorados.',
+            note: 'Investigación aplicada en el LabSEC, 2024–2025.' }
+        ],
+        pubTitle: 'Publicaciones',
+        pubNote: (n) => n + ' publicaciones',
+        abstract: 'Resumen',
+        copyCite: 'Copiar cita', copyBib: 'BibTeX', citeCopied: 'Cita copiada', bibCopied: 'BibTeX copiado', copyFail: 'No se pudo copiar',
+        pubs: {
+          jurix: { status: 'aceptado, en prensa', venue: 'JURIX 2026, 39th International Conference on Legal Knowledge and Information Systems',
+            desc: 'Revisión sistemática de alcance con mapeo de evidencias: de 4.289 registros auditables, 651 fuentes integran el mapa final, que identifica cinco brechas (G1–G5) entre mecanismos técnicos y jurídicos. Las brechas se consolidan en un modelo de requisitos independiente de la implementación (R1–R18), organizado en torno a una cadena de evidencia a nivel del acto que considera derrotadores (mandante, mandato, agente, contexto de ejecución, acto y evidencia impugnable), evaluada mediante cuatro verificaciones que alimentan una decisión de Denegar, Escalar o Permitir. Los doce escenarios preespecificados reprodujeron sus resultados de referencia, y cada eliminación deliberada de controles produjo un efecto observable en la decisión o en la evidencia.' },
+          clei: { status: 'aceptado', venue: 'CLEI 2026, Conferencia Latinoamericana de Informática',
+            desc: 'Evaluación empírica de la calibración probabilística y la predicción selectiva en la clasificación de documentos judiciales en portugués, con el corpus TJAL, comparando tres modelos Transformer y tres baselines clásicos con validación cruzada estratificada de 5 particiones. Todos los modelos están descalibrados antes de la corrección post hoc; el Temperature Scaling reduce de forma consistente el error medio de calibración, aunque la confiabilidad local en el peor caso sigue siendo limitada para varios Transformers. Con un protocolo exploratorio de selección de umbral, la mejor configuración selectiva alcanza un 98,32 % de exactitud con un 90 % de cobertura.' },
+          xling: { venue: 'MICAI 2025, Advances in Soft Computing, Springer LNCS vol. 16222, pp. 203–214',
+            desc: 'Estudio de caso sobre los límites y comportamientos inesperados del BERT multilingüe en la clasificación de textos sensibles en portugués con escasez de datos. Evalúa la transferencia entre lenguas y propone estrategias para mitigar la pérdida de rendimiento con pocos ejemplos etiquetados.' },
+          ganbert: { venue: 'MICAI 2025, Advances in Soft Computing, Springer LNCS vol. 16222, pp. 190–202',
+            desc: 'Reevaluación crítica de GAN-BERT para la clasificación de textos sensibles, centrada en las dinámicas de entrenamiento adversarial y la alineación de dominio en entornos con pocos datos anotados. Propone ajustes que mejoran la estabilidad y la generalización del modelo.' },
+          risk: { venue: 'ICISS 2025, Information Systems Security, Springer LNCS vol. 16380, pp. 85–103',
+            desc: 'Análisis de cómo los modelos Transformer están transformando la gestión de información sensible en las organizaciones, evaluando riesgos de automatización, sesgos de los modelos e implicaciones para el cumplimiento normativo y la privacidad en contextos institucionales críticos.' },
+          iara: { venue: 'ERCOMPRS 2020, SBC, p. 50',
+            desc: 'Chatbot conversacional para recopilar, relacionar y difundir datos epidemiológicos sobre la COVID-19 en la región de Santa Cruz do Sul (RS), integrando fuentes de datos públicas en una interfaz accesible. Presentado en la I Escuela Regional de Computación de Rio Grande do Sul.' }
+        },
+        expTitle: 'Experiencia',
+        present: 'presente',
+        months: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sept', 'oct', 'nov', 'dic'],
+        dur: (y, m) => [y ? y + (y > 1 ? ' años' : ' año') : '', m ? m + (m > 1 ? ' meses' : ' mes') : ''].filter(Boolean).join(' y '),
+        exp: {
+          onr: { role: 'Ingeniero de software', org: 'ON-RCPN, Operador Nacional del Registro Civil de Brasil', loc: 'Remoto',
+            desc: 'Desarrollo de software para la plataforma nacional de registro civil e identidad digital de Brasil.' },
+          labsec: { role: 'Investigador becario', org: 'LabSEC, Laboratorio de Seguridad en Computación, UFSC', loc: 'Florianópolis',
+            desc: 'Clasificación de documentos sensibles con modelos Transformer (BERT, GAN-BERT), evaluación de modelos de lenguaje en portugués y un sistema de OCR para documentos históricos. El trabajo dio lugar a tres artículos completos publicados en LNCS (MICAI 2025 e ICISS 2025).' },
+          tjsc: { role: 'Pasante de desarrollo de software', org: 'Tribunal de Justicia de Santa Catarina', loc: 'Florianópolis',
+            desc: 'Desarrollo y mantenimiento de sistemas internos del poder judicial de Santa Catarina.' },
+          pet: { role: 'Becario', org: 'PET Computación, UFSC', loc: 'Florianópolis',
+            desc: 'Enseñanza, investigación y extensión en el Programa de Educación Tutorial de Ciencias de la Computación, con iniciación científica.' }
+        },
+        eduTitle: 'Formación',
+        edu: [
+          { period: '2025 – presente', note: 'en curso', degree: 'Maestría en Ciencias de la Computación', inst: 'PPGCC, Universidad Federal de Santa Catarina',
+            desc: 'Tesis sobre agentes personales de IA representativos. Director: Prof. Ricardo Custódio.' },
+          { period: '2021 – 2025', degree: 'Licenciatura en Ciencias de la Computación', inst: 'Universidad Federal de Santa Catarina',
+            desc: 'Participé en el PET Computación y en el LabSEC.' }
+        ],
+        contactTitle: 'Contacto',
+        contactLede: 'La forma más rápida de contactarme es por correo.',
+        contactLabels: { email: 'Correo', inst: 'Correo institucional', orcid: 'ORCID', lattes: 'Currículum Lattes', scholar: 'Google Scholar', dblp: 'dblp', springer: 'Perfil en Springer', github: 'GitHub', linkedin: 'LinkedIn' },
+        updated: 'Actualizado en noviembre de 2026'
+      }
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const root = document.documentElement;
+    let lang = 'pt';
+
+    function parseYM(s) { const [y, m] = s.split('-').map(Number); return { y, m }; }
+    function fmtYM(s, t) { const d = parseYM(s); return t.months[d.m - 1] + ' ' + d.y; }
+    function duration(start, end, t) {
+      const a = parseYM(start);
+      const now = new Date();
+      const b = end ? parseYM(end) : { y: now.getFullYear(), m: now.getMonth() + 1 };
+      const total = Math.max(1, (b.y - a.y) * 12 + (b.m - a.m) + 1);
+      return t.dur(Math.floor(total / 12), total % 12);
     }
-  ];
-  T.pt.expLabel = '05 — Experiência';
-  T.pt.researchLabel = '06 — Pesquisa';
-  T.pt.pubLabel = '07 — Publicações';
-  T.pt.contactLabel = '08 — Contato';
 
-  T.en.nav = ['About','Education','Projects','Experience','Research','Publications','Contact'];
-  T.en.navIds = ['about','education','projects','experience','research','publications','contact'];
-  T.en.heroProjects = 'View projects';
-  T.en.menuOpen = 'Open menu';
-  T.en.menuClose = 'Close menu';
-  T.en.projectsLabel = '04 — Projects';
-  T.en.projectsTitle = 'Selected Projects';
-  T.en.projects = [
-    {
-      kicker: 'AI · NLP · Low-data',
-      title: 'Sensitive Text Classification',
-      desc: 'Applied research for legal, governmental, and corporate documents using Transformer models such as BERT, mBERT, BERTimbau, and GAN-BERT in low-label scenarios.',
-      tags: ['Transformers', 'BERTimbau', 'GAN-BERT', 'Portuguese'],
-      links: [
-        { label: 'See research', href: '#research' },
-        { label: 'See publications', href: '#publications' }
-      ]
-    },
-    {
-      kicker: 'OCR · LLMs · Heritage',
-      title: 'Intelligent OCR for Historical Archives',
-      desc: 'A pipeline for transcription, correction, and indexing of handwritten or degraded historical documents, combining OCR with language models to preserve and search archival collections.',
-      tags: ['OCR', 'Historical archives', 'Indexing', 'AI'],
-      links: [
-        { label: 'See research', href: '#research' },
-        { label: 'Get in touch', href: '#contact' }
-      ]
-    },
-    {
-      kicker: 'Software · Digital Identity',
-      title: 'National Civil Registry Infrastructure',
-      desc: 'Software engineering for Brazil’s national civil registry and digital identity platform, focused on availability, reliability, and security for critical systems.',
-      tags: ['APIs', 'High availability', 'Security', 'Back-end'],
-      links: [
-        { label: 'See experience', href: '#experience' },
-        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mauricio-konrath/' }
-      ]
+    function pubItem(p, t) {
+      const L = t.pubs[p.id];
+      const title = L.title || p.title;
+      const titleHtml = p.href ? `<a href="${p.href}" target="_blank" rel="noopener">${title}</a>` : title;
+      return `
+        <li class="pub" id="pub-${p.id}">
+          <p class="pub-title">${titleHtml}</p>
+          <p class="pub-meta">${p.authors}<br>${L.venue}${L.status ? `, <span class="status">${L.status}</span>` : ''}</p>
+          <p class="pub-actions">
+            <button type="button" class="link-btn" data-abs="${p.id}" aria-expanded="false" aria-controls="abs-${p.id}">${t.abstract}</button>
+            <button type="button" class="link-btn" data-copy="${p.id}" data-fmt="text">${t.copyCite}</button>
+            <button type="button" class="link-btn" data-copy="${p.id}" data-fmt="bib">${t.copyBib}</button>
+            ${p.code ? `<a href="${p.code}" target="_blank" rel="noopener">${t.code}</a>` : ''}
+            ${p.href ? `<a href="${p.href}" target="_blank" rel="noopener">DOI</a>` : ''}
+          </p>
+          <div class="pub-abs" id="abs-${p.id}" hidden><p>${L.desc}</p></div>
+        </li>`;
     }
-  ];
-  T.en.expLabel = '05 — Experience';
-  T.en.researchLabel = '06 — Research';
-  T.en.pubLabel = '07 — Publications';
-  T.en.contactLabel = '08 — Contact';
 
-  T.es.nav = ['Sobre mí','Formación','Proyectos','Experiencia','Investigación','Publicaciones','Contacto'];
-  T.es.navIds = ['about','education','projects','experience','research','publications','contact'];
-  T.es.heroProjects = 'Ver proyectos';
-  T.es.menuOpen = 'Abrir menú';
-  T.es.menuClose = 'Cerrar menú';
-  T.es.projectsLabel = '04 — Proyectos';
-  T.es.projectsTitle = 'Proyectos Seleccionados';
-  T.es.projects = [
-    {
-      kicker: 'IA · PLN · Low-data',
-      title: 'Clasificación de Textos Sensibles',
-      desc: 'Investigación aplicada a documentos jurídicos, gubernamentales y corporativos usando Transformers como BERT, mBERT, BERTimbau y GAN-BERT en escenarios con pocos datos etiquetados.',
-      tags: ['Transformers', 'BERTimbau', 'GAN-BERT', 'Portugués'],
-      links: [
-        { label: 'Ver investigación', href: '#research' },
-        { label: 'Ver publicaciones', href: '#publications' }
-      ]
-    },
-    {
-      kicker: 'OCR · LLMs · Patrimonio',
-      title: 'OCR Inteligente para Archivos Históricos',
-      desc: 'Pipeline para transcripción, corrección e indexación de documentos históricos manuscritos o deteriorados, combinando OCR con modelos de lenguaje para preservar y hacer buscables las colecciones documentales.',
-      tags: ['OCR', 'Archivos históricos', 'Indexación', 'IA'],
-      links: [
-        { label: 'Ver investigación', href: '#research' },
-        { label: 'Hablar conmigo', href: '#contact' }
-      ]
-    },
-    {
-      kicker: 'Software · Identidad Digital',
-      title: 'Infraestructura Nacional del Registro Civil',
-      desc: 'Desarrollo de software para la plataforma nacional de registro civil e identidad digital de Brasil, con foco en disponibilidad, confiabilidad y seguridad para sistemas críticos.',
-      tags: ['APIs', 'Alta disponibilidad', 'Seguridad', 'Back-end'],
-      links: [
-        { label: 'Ver experiencia', href: '#experience' },
-        { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mauricio-konrath/' }
-      ]
+    function render(t) {
+      root.lang = t.htmlLang;
+      document.querySelector('meta[name="description"]').setAttribute('content', t.metaDesc);
+      document.querySelectorAll('[data-i]').forEach((el) => {
+        const v = t[el.dataset.i];
+        if (typeof v === 'string') el.textContent = v;
+      });
+
+      $('nav').setAttribute('aria-label', t.navLabel);
+      $('navList').innerHTML = t.nav.map((label, i) => `<li><a href="#${NAV_IDS[i]}">${label}</a></li>`).join('');
+
+      $('heroLinks').innerHTML = HERO_LINKS.map((l) =>
+        `<li><a href="${l.href}"${l.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${t.linkLabels[l.k]}</a></li>`).join('');
+      const photo = $('photo');
+      if (SITE.photo) {
+        photo.hidden = false;
+        photo.innerHTML = `<img src="${SITE.photo}" alt="${t.photoAlt}" width="220" height="275">`;
+        $('heroInner').classList.add('has-photo');
+      }
+
+      $('newsList').innerHTML = NEWS.map((n) => {
+        const [y, m] = n.date.split('-').map(Number);
+        return `<li><time datetime="${n.date}">${t.months[m - 1]} ${y}</time><span>${t.news[n.id]}</span></li>`;
+      }).join('');
+
+      $('talkList').innerHTML = t.talks.map((k) => `
+        <li>
+          <p class="when"><span>${k.when}</span></p>
+          <div>
+            <h3>${k.title}</h3>
+            <p class="org">${k.org}</p>
+            <p class="place">${k.place}</p>
+          </div>
+        </li>`).join('');
+
+      $('teachList').innerHTML = t.teaching.map((k) => `
+        <li>
+          <p class="when"><span>${k.when}</span></p>
+          <div>
+            <h3>${k.title}</h3>
+            <p class="org">${k.org}</p>
+            <p class="desc">${k.desc}</p>
+          </div>
+        </li>`).join('');
+
+      $('aboutText').innerHTML = t.aboutText.map((p) => `<p>${p}</p>`).join('');
+      $('skills').innerHTML = t.skills.map(([dt, dd]) => `<dt>${dt}</dt><dd>${dd}</dd>`).join('');
+
+      $('researchList').innerHTML = t.research.map((r) => `
+        <li>
+          <h3>${r.title}</h3>
+          <p>${r.desc}</p>
+          <p class="related">${r.rel
+            ? t.relatedLabel + ': ' + r.rel.map((l) => `<a href="${l.href}" data-open>${l.label}</a>`).join('')
+            : r.note}</p>
+        </li>`).join('');
+
+      $('pubNote').textContent = t.pubNote(PUBS.length);
+      const years = [...new Set(PUBS.map((p) => p.year))];
+      $('pubList').innerHTML = years.map((y) => `
+        <h3 class="year">${y}</h3>
+        <ol class="pubs">${PUBS.filter((p) => p.year === y).map((p) => pubItem(p, t)).join('')}</ol>`).join('');
+
+      $('expList').innerHTML = EXP.map((e) => {
+        const L = t.exp[e.key];
+        const period = fmtYM(e.start, t) + ' – ' + (e.end ? fmtYM(e.end, t) : t.present);
+        return `
+        <li>
+          <p class="when"><span>${period}</span><span>${duration(e.start, e.end, t)}</span></p>
+          <div>
+            <h3>${L.role}</h3>
+            <p class="org">${L.org}</p>
+            <p class="place">${L.loc}</p>
+            <p class="desc">${L.desc}</p>
+          </div>
+        </li>`;
+      }).join('');
+
+      $('eduList').innerHTML = t.edu.map((e) => `
+        <li>
+          <p class="when"><span>${e.period}</span>${e.note ? `<span>${e.note}</span>` : ''}</p>
+          <div>
+            <h3>${e.degree}</h3>
+            <p class="org">${e.inst}</p>
+            <p class="desc">${e.desc}</p>
+          </div>
+        </li>`).join('');
+
+      $('contactList').innerHTML = CONTACT.map((c) =>
+        `<dt>${t.contactLabels[c.k]}</dt><dd><a href="${c.href}"${c.href.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${c.v}</a></dd>`
+      ).join('');
+
+      document.querySelectorAll('.lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+      updateThemeBtn();
+      setMenu(false);
+      observeSections();
     }
-  ];
-  T.es.expLabel = '05 — Experiencia';
-  T.es.researchLabel = '06 — Investigación';
-  T.es.pubLabel = '07 — Publicaciones';
-  T.es.contactLabel = '08 — Contacto';
 
-  let currentLang = 'pt';
+    function setLang(l) {
+      if (!T[l]) return;
+      lang = l;
+      store.set('mk-lang', l);
+      render(T[l]);
+    }
 
-  function setLang(lang) {
-    currentLang = lang;
-    document.documentElement.lang = T[lang].htmlLang;
-    document.querySelectorAll('.lang-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.lang === lang);
+    /* Tema */
+    const ICON_MOON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
+    const ICON_SUN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    function effectiveTheme() { return root.getAttribute('data-theme') || (darkQuery.matches ? 'dark' : 'light'); }
+    function updateThemeBtn() {
+      const dark = effectiveTheme() === 'dark';
+      const btn = $('themeBtn');
+      btn.innerHTML = dark ? ICON_SUN : ICON_MOON;
+      btn.setAttribute('aria-label', dark ? T[lang].toLight : T[lang].toDark);
+      btn.title = btn.getAttribute('aria-label');
+    }
+    $('themeBtn').addEventListener('click', () => {
+      const next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      store.set('mk-theme', next);
+      updateThemeBtn();
     });
+    if (darkQuery.addEventListener) darkQuery.addEventListener('change', updateThemeBtn);
+
+    /* Menu no celular */
+    const nav = $('nav');
+    const menuBtn = $('menuBtn');
+    function setMenu(open) {
+      nav.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.setAttribute('aria-label', open ? T[lang].menuClose : T[lang].menuOpen);
+    }
+    menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+    nav.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+    document.addEventListener('click', (e) => {
+      if (nav.classList.contains('open') && !e.target.closest('.site-header')) setMenu(false);
+    });
+
+    document.querySelectorAll('.lang button').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+    /* Resumo, citação e links da seção de pesquisa */
+    function setAbstract(id, open) {
+      const box = $('abs-' + id);
+      const btn = document.querySelector(`button[data-abs="${id}"]`);
+      if (!box || !btn) return;
+      box.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+    }
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); return; }
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      const ok = document.execCommand('copy');
+      ta.remove();
+      if (!ok) throw new Error('copy failed');
+    }
+
+    document.addEventListener('click', async (e) => {
+      const abs = e.target.closest('button[data-abs]');
+      if (abs) { setAbstract(abs.dataset.abs, abs.getAttribute('aria-expanded') !== 'true'); return; }
+
+      const open = e.target.closest('a[data-open]');
+      if (open) { setAbstract(open.getAttribute('href').replace('#pub-', ''), true); return; }
+
+      const btn = e.target.closest('button[data-copy]');
+      if (!btn) return;
+      const c = CITES[btn.dataset.copy];
+      if (!c) return;
+      const t = T[lang];
+      const isBib = btn.dataset.fmt === 'bib';
+      const original = isBib ? t.copyBib : t.copyCite;
+      try {
+        await copyText(isBib ? c.bib : c.text);
+        btn.classList.add('done');
+        btn.textContent = isBib ? t.bibCopied : t.citeCopied;
+        $('live').textContent = btn.textContent;
+      } catch (err) {
+        btn.textContent = t.copyFail;
+        $('live').textContent = t.copyFail;
+      }
+      clearTimeout(btn._timer);
+      btn._timer = setTimeout(() => { btn.classList.remove('done'); btn.textContent = original; }, 2000);
+    });
+
+    /* Cabeçalho e seção ativa */
+    const header = $('siteHeader');
+    function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    let io;
+    function observeSections() {
+      if (!('IntersectionObserver' in window)) return;
+      if (io) io.disconnect();
+      io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          document.querySelectorAll('#navList a').forEach((a) =>
+            a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + en.target.id)));
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      NAV_IDS.forEach((id) => { const s = $(id); if (s) io.observe(s); });
+    }
+
+    const saved = store.get('mk-lang');
+    const nav0 = (navigator.language || 'pt').toLowerCase();
+    lang = T[saved] ? saved : nav0.startsWith('pt') ? 'pt' : nav0.startsWith('es') ? 'es' : nav0.startsWith('en') ? 'en' : 'pt';
     render(T[lang]);
-    setMenuOpen(false);
-    // re-observe reveals after render
-    document.querySelectorAll('.reveal').forEach(el => el.classList.remove('visible'));
-    setTimeout(() => {
-      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-    }, 50);
-  }
-
-  function esc(str) {
-    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
-
-  function render(t) {
-    // nav
-    const nl = document.getElementById('navLinks');
-    nl.innerHTML = t.nav.map((label, i) =>
-      `<li><a href="#${t.navIds[i]}">${label}</a></li>`
-    ).join('');
-    document.getElementById('menuToggle').setAttribute('aria-label', t.menuOpen);
-
-    // hero
-    document.getElementById('heroTag').textContent = t.heroTag;
-    document.getElementById('heroRole').textContent = t.heroRole;
-    document.getElementById('heroBio').textContent = t.heroBio;
-    document.getElementById('heroContact').textContent = t.heroContact;
-    document.getElementById('heroProjects').textContent = t.heroProjects;
-
-    // about
-    document.getElementById('aboutLabel').textContent = t.aboutLabel;
-    const titleParts = t.aboutTitle.split('\n');
-    document.getElementById('aboutTitle').innerHTML =
-      titleParts[0] + '<br><em>' + titleParts[1] + '</em>';
-    document.getElementById('aboutText').innerHTML =
-      t.aboutText.map(p => `<p>${p}</p>`).join('');
-    document.getElementById('statMsc').textContent = t.statMsc;
-    document.getElementById('statPubs').textContent = t.statPubs;
-    document.getElementById('statSpringer').textContent = t.statSpringer;
-    document.getElementById('statYears').textContent = t.statYears;
-
-    // education
-    document.getElementById('educationLabel').textContent = t.educationLabel;
-    document.getElementById('educationTitle').textContent = t.educationTitle;
-    document.getElementById('educationList').innerHTML = t.education.map(e => `
-      <div class="edu-item reveal">
-        <div class="edu-date">
-          ${e.period}
-          ${e.badge ? `<span class="edu-badge">${e.badge}</span>` : ''}
-        </div>
-        <div>
-          <p class="edu-degree">${e.degree}</p>
-          <p class="edu-inst">${e.inst}</p>
-          <p class="edu-desc">${e.desc}</p>
-        </div>
-      </div>`).join('');
-
-    // skills
-    document.getElementById('skillsLabel').textContent = t.skillsLabel;
-    document.getElementById('skillsTitle').textContent = t.skillsTitle;
-    document.getElementById('skillsGrid').innerHTML = t.skillGroups.map(g => `
-      <div class="skill-group">
-        <p class="skill-group-title">${g.title}</p>
-        <div class="skill-tags">
-          ${g.items.map(i => `<span class="skill-tag">${i}</span>`).join('')}
-        </div>
-      </div>`).join('');
-
-    // projects
-    document.getElementById('projectsLabel').textContent = t.projectsLabel;
-    document.getElementById('projectsTitle').textContent = t.projectsTitle;
-    document.getElementById('projectsGrid').innerHTML = t.projects.map(p => `
-      <article class="project-card">
-        <p class="project-kicker">${p.kicker}</p>
-        <h3 class="project-title">${p.title}</h3>
-        <p class="project-desc">${p.desc}</p>
-        <div class="project-tags">
-          ${p.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-        </div>
-        <div class="project-links">
-          ${p.links.map(link => `<a class="project-link" href="${link.href}" ${link.href.startsWith('http') ? 'target="_blank" rel="noopener"' : ''}>${link.label}</a>`).join('')}
-        </div>
-      </article>`).join('');
-
-    // experience
-    document.getElementById('expLabel').textContent = t.expLabel;
-    document.getElementById('expTitle').textContent = t.expTitle;
-    document.getElementById('expList').innerHTML = t.experience.map(e => `
-      <div class="exp-item reveal">
-        <div class="exp-date">
-          ${e.period}
-          <span class="duration">${e.duration}</span>
-        </div>
-        <div>
-          <p class="exp-role">${e.role}</p>
-          <p class="exp-company">${e.company}</p>
-          <p class="exp-location">${e.location}</p>
-          <p class="exp-desc">${e.desc}</p>
-        </div>
-      </div>`).join('');
-
-    // research
-    document.getElementById('researchLabel').textContent = t.researchLabel;
-    const rParts = t.researchTitle.split('\n');
-    document.getElementById('researchTitle').innerHTML =
-      rParts[0] + '<br><em>' + rParts[1] + '</em>';
-    document.getElementById('researchGrid').innerHTML = t.research.map(r => `
-      <div class="research-card">
-        <p class="research-idx">${r.idx}</p>
-        <p class="research-title">${r.title}</p>
-        <p class="research-desc">${r.desc}</p>
-      </div>`).join('');
-
-    // publications
-    document.getElementById('pubLabel').textContent = t.pubLabel;
-    const pParts = t.pubTitle.split('\n');
-    document.getElementById('pubTitle').innerHTML =
-      pParts[0] + '<br>' + pParts[1];
-    document.getElementById('pubList').innerHTML = t.publications.map(p => `
-      <div class="pub-item reveal">
-        <div class="pub-meta">
-          <span class="pub-year">${p.year}</span>
-          <span class="pub-venue">${p.venue.replace(/\n/g,'<br>')}</span>
-        </div>
-        <div>
-          <p class="pub-title">${p.title}</p>
-          <p class="pub-authors">${p.authors}</p>
-          <p class="pub-desc">${p.desc}</p>
-          <a class="pub-link" href="${p.href}" target="_blank" rel="noopener">${p.doi}</a>
-        </div>
-      </div>`).join('');
-
-    // contact
-    document.getElementById('contactLabel').textContent = t.contactLabel;
-    document.getElementById('contactTitle').textContent = t.contactTitle;
-    document.getElementById('contactEmailLabel').textContent = t.contactEmailLabel;
-    document.getElementById('contactLocLabel').textContent = t.contactLocLabel;
-
-    // footer
-    document.getElementById('footerSub').textContent = t.footerSub;
-  }
-
-  const navLinks = document.getElementById('navLinks');
-  const menuToggle = document.getElementById('menuToggle');
-
-  function setMenuOpen(isOpen) {
-    navLinks.classList.toggle('open', isOpen);
-    menuToggle.classList.toggle('active', isOpen);
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    menuToggle.setAttribute('aria-label', isOpen ? T[currentLang].menuClose : T[currentLang].menuOpen);
-  }
-
-  menuToggle.addEventListener('click', () => {
-    setMenuOpen(!navLinks.classList.contains('open'));
-  });
-
-  navLinks.addEventListener('click', (event) => {
-    if (window.innerWidth <= 780 && event.target.closest('a')) setMenuOpen(false);
-  });
-
-  document.addEventListener('click', (event) => {
-    if (window.innerWidth > 780) return;
-    if (!event.target.closest('nav')) setMenuOpen(false);
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 780) setMenuOpen(false);
-  });
-
-  // Intersection observer
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.08 });
-
-  document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-  // Initial render
-  render(T.pt);
-  setTimeout(() => {
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  }, 100);
+  })();
   </script>
 </body>
 </html>
