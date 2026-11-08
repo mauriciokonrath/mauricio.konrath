@@ -464,6 +464,8 @@
       { id: 'risk', year: 2026, title: 'Automation and Risk: Transformers Models Reshape Sensitive Information Management',
         authors: 'Silvano, W. F.; ' + ME + '; Mayr, L.; Custódio, R. F.',
         doi: '10.1007/978-3-032-13714-2_7', href: 'https://doi.org/10.1007/978-3-032-13714-2_7' },
+      { id: 'ocrrc', year: 2026, title: 'OCR Inteligente no Registro Civil: Emissão de Certidões de Inteiro Teor e Digitalização de Acervos',
+        authors: 'Silvano, W. F.; ' + ME + '; Custódio, R.', doi: '', href: '' },
       { id: 'iara', year: 2020, title: 'Chatbot Iara: relacionando e interagindo com dados sobre o novo coronavírus em Santa Cruz do Sul',
         authors: 'Martini, P.; Tomaz, M.; Priebe, P.; Konrath, Ma.; ' + ME + '; Bagatini, D.; Peranconi, D.',
         doi: '10.5753/ercomprs.2020.14295', href: 'https://doi.org/10.5753/ercomprs.2020.14295' }
@@ -541,6 +543,18 @@
   year      = {2026},
   isbn      = {978-3-032-13714-2},
   doi       = {10.1007/978-3-032-13714-2_7}
+}`
+      },
+      ocrrc: {
+        text: 'Silvano, W.F., Konrath, M., Custódio, R. (2026). OCR Inteligente no Registro Civil: Emissão de Certidões de Inteiro Teor e Digitalização de Acervos. In: Registro Civil de Pessoas Naturais - As Novas Tecnologias a Serviço das Demandas Sociais, v. 4, pp. 201–212. Thomson Reuters.',
+        bib: String.raw`@incollection{silvano2026ocr,
+  title     = {OCR Inteligente no Registro Civil: Emiss{\~a}o de Certid{\~o}es de Inteiro Teor e Digitaliza{\c{c}}{\~a}o de Acervos},
+  author    = {Silvano, Wellington Fernandes and Konrath, Maur{\'i}cio and Cust{\'o}dio, Ricardo},
+  booktitle = {Registro Civil de Pessoas Naturais - As Novas Tecnologias a Servi{\c{c}}o das Demandas Sociais},
+  volume    = {4},
+  pages     = {201--212},
+  year      = {2026},
+  publisher = {Thomson Reuters}
 }`
       },
       iara: {
@@ -630,8 +644,7 @@
         aboutTitle: 'Sobre',
         aboutText: [
           'Faço mestrado no Programa de Pós-Graduação em Ciência da Computação (PPGCC) da UFSC, com orientação do Prof. Ricardo Custódio. Na dissertação, <em>Personal AI como Agente Representativo</em>, estudo o que é preciso, técnica e juridicamente, para que um agente baseado em LLM pratique atos digitais em nome de uma pessoa identificada de forma válida e segura.',
-          'Meu trabalho mistura computação e direito: delegação verificável, atribuição jurídica de atos praticados por agentes de IA e a confiabilidade de modelos de linguagem usados em processos judiciais.',
-          
+          'Meu trabalho mistura computação e direito: delegação verificável, atribuição jurídica de atos praticados por agentes de IA e a confiabilidade de modelos de linguagem usados em processos judiciais.'
         ],
         skills: [
           ['IA e PLN', 'Transformers e Hugging Face, BERT, BERTimbau, GAN-BERT, calibração e predição seletiva, agentes baseados em LLMs, PyTorch, scikit-learn, OCR.'],
@@ -651,8 +664,8 @@
             desc: 'Modelos Transformer (BERT, mBERT, BERTimbau, GAN-BERT) para encontrar informação sensível em documentos jurídicos, governamentais e corporativos quando há poucos exemplos rotulados.',
             rel: [{ label: 'BERT multilíngue', href: '#pub-xling' }, { label: 'GAN-BERT', href: '#pub-ganbert' }, { label: 'Automação e risco', href: '#pub-risk' }] },
           { title: 'OCR para acervos históricos',
-            desc: 'Combinação de OCR com modelos de linguagem para transcrever, corrigir e indexar documentos históricos manuscritos ou degradados.',
-            note: 'Pesquisa aplicada no LabSEC, 2024–2025.' }
+            desc: 'Combinação de OCR com modelos de linguagem para transcrever, corrigir e indexar documentos históricos manuscritos ou degradados, com aplicação aos acervos do Registro Civil.',
+            rel: [{ label: 'OCR Inteligente no Registro Civil', href: '#pub-ocrrc' }] }
         ],
         pubTitle: 'Publicações',
         pubNote: (n) => n + ' publicações',
@@ -669,6 +682,8 @@
             desc: 'Reavaliação crítica da arquitetura GAN-BERT para classificação de textos sensíveis, com foco no impacto das dinâmicas de treinamento adversarial e do alinhamento de domínio em cenários com poucos dados anotados. Propõe ajustes que melhoram a estabilidade e a generalização do modelo.' },
           risk: { venue: 'ICISS 2025, Information Systems Security, Springer LNCS vol. 16380, p. 85–103',
             desc: 'Análise de como modelos Transformer estão transformando a gestão de informações sensíveis em organizações, avaliando riscos de automação, vieses de modelos e implicações para conformidade e privacidade em contextos institucionais críticos.' },
+          ocrrc: { venue: 'Registro Civil de Pessoas Naturais - As Novas Tecnologias a Serviço das Demandas Sociais, v. 4, p. 201–212, Thomson Reuters',
+            desc: 'Este artigo investiga a viabilidade da Inteligência Artificial (IA) avançada na digitalização de acervos históricos do Registro Civil, superando as limitações técnicas do OCR tradicional em documentos manuscritos ou degradados. Propõe-se o modelo conceitual “OCR Inteligente”, que integra Grandes Modelos de Linguagem (LLMs) para pós-correção semântica e utiliza a autenticação via IdRC como vetor de contextualização para refinar o reconhecimento de antropônimos e topônimos. Adicionalmente, analisa-se a conformidade da tecnologia para a geração de “sucessores digitais” válidos, segundo o Decreto nº 10.278/2020. Os resultados teóricos confirmam a plausibilidade da hipótese, posicionando o OCR Inteligente como tecnologia de infraestrutura essencial para a modernização registral, preservação da memória nacional e garantia da segurança jurídica digital.' },
           iara: { venue: 'ERCOMPRS 2020, SBC, p. 50',
             desc: 'Chatbot conversacional para coleta, relacionamento e disseminação de dados epidemiológicos sobre a COVID-19 na região de Santa Cruz do Sul (RS), integrando fontes de dados públicas a uma interface acessível. Apresentado na I Escola Regional de Computação do Rio Grande do Sul.' }
         },
@@ -731,8 +746,7 @@
         aboutTitle: 'About',
         aboutText: [
           'I’m an MSc student in the Graduate Program in Computer Science (PPGCC) at UFSC, advised by Prof. Ricardo Custódio. My dissertation looks at what it takes, technically and legally, for an LLM-based agent to carry out digital acts on behalf of an identified person in a valid and secure way.',
-          'My work sits between computing and law: verifiable delegation, legal attribution of acts performed by AI agents, and the reliability of language models used in court proceedings.',
-          'I was born in Santa Cruz do Sul (RS) and live in Florianópolis (SC).'
+          'My work sits between computing and law: verifiable delegation, legal attribution of acts performed by AI agents, and the reliability of language models used in court proceedings.'
         ],
         skills: [
           ['AI and NLP', 'Transformers and Hugging Face, BERT, BERTimbau, GAN-BERT, calibration and selective prediction, LLM-based agents, PyTorch, scikit-learn, OCR.'],
@@ -752,8 +766,8 @@
             desc: 'Transformer models (BERT, mBERT, BERTimbau, GAN-BERT) for finding sensitive information in legal, government, and corporate documents when there are few labelled examples.',
             rel: [{ label: 'Cross-lingual BERT', href: '#pub-xling' }, { label: 'GAN-BERT', href: '#pub-ganbert' }, { label: 'Automation and risk', href: '#pub-risk' }] },
           { title: 'OCR for historical archives',
-            desc: 'Combining optical character recognition with language models to transcribe, correct, and index handwritten or degraded historical documents.',
-            note: 'Applied research at LabSEC, 2024–2025.' }
+            desc: 'Combining optical character recognition with language models to transcribe, correct, and index handwritten or degraded historical documents, applied to the archives of the Brazilian Civil Registry.',
+            rel: [{ label: 'Intelligent OCR in the Civil Registry', href: '#pub-ocrrc' }] }
         ],
         pubTitle: 'Publications',
         pubNote: (n) => n + ' publications',
@@ -770,6 +784,8 @@
             desc: 'A critical reassessment of GAN-BERT for sensitive-text classification, focusing on adversarial training dynamics and domain alignment in low-annotation settings. It proposes adjustments that improve model stability and generalisation.' },
           risk: { venue: 'ICISS 2025, Information Systems Security, Springer LNCS vol. 16380, pp. 85–103',
             desc: 'An analysis of how Transformer models are changing sensitive information management in organisations, assessing automation risks, model bias, and implications for compliance and privacy in critical institutional settings.' },
+          ocrrc: { venue: 'Registro Civil de Pessoas Naturais - As Novas Tecnologias a Serviço das Demandas Sociais, vol. 4, pp. 201–212, Thomson Reuters',
+            desc: 'This chapter (in Portuguese) investigates the feasibility of advanced Artificial Intelligence for digitising the historical archives of the Brazilian Civil Registry, overcoming the technical limitations of traditional OCR on handwritten or degraded documents. It proposes the conceptual model “Intelligent OCR”, which integrates Large Language Models (LLMs) for semantic post-correction and uses IdRC authentication as a contextualisation vector to refine the recognition of personal and place names. It also analyses the technology’s compliance for generating valid “digital successors” under Decree No. 10,278/2020. The theoretical results support the plausibility of the hypothesis, positioning Intelligent OCR as essential infrastructure for modernising civil registration, preserving national memory, and ensuring digital legal certainty.' },
           iara: { venue: 'ERCOMPRS 2020, SBC, p. 50',
             title: 'Chatbot Iara: relating and interacting with data about the new coronavirus in Santa Cruz do Sul',
             desc: 'A conversational chatbot for collecting, relating, and disseminating COVID-19 epidemiological data in the Santa Cruz do Sul region (RS), connecting public data sources to an accessible interface. Presented at the 1st Regional School of Computing of Rio Grande do Sul.' }
@@ -833,8 +849,7 @@
         aboutTitle: 'Sobre mí',
         aboutText: [
           'Curso la maestría en el Programa de Posgrado en Ciencias de la Computación (PPGCC) de la UFSC, bajo la dirección del Prof. Ricardo Custódio. En la tesis estudio qué hace falta, técnica y jurídicamente, para que un agente basado en LLM realice actos digitales en nombre de una persona identificada de forma válida y segura.',
-          'Mi trabajo combina computación y derecho: delegación verificable, atribución jurídica de actos realizados por agentes de IA y confiabilidad de los modelos de lenguaje usados en procesos judiciales.',
-          'Nací en Santa Cruz do Sul (RS) y vivo en Florianópolis (SC).'
+          'Mi trabajo combina computación y derecho: delegación verificable, atribución jurídica de actos realizados por agentes de IA y confiabilidad de los modelos de lenguaje usados en procesos judiciales.'
         ],
         skills: [
           ['IA y PLN', 'Transformers y Hugging Face, BERT, BERTimbau, GAN-BERT, calibración y predicción selectiva, agentes basados en LLMs, PyTorch, scikit-learn, OCR.'],
@@ -854,8 +869,8 @@
             desc: 'Modelos Transformer (BERT, mBERT, BERTimbau, GAN-BERT) para encontrar información sensible en documentos jurídicos, gubernamentales y corporativos cuando hay pocos ejemplos etiquetados.',
             rel: [{ label: 'BERT multilingüe', href: '#pub-xling' }, { label: 'GAN-BERT', href: '#pub-ganbert' }, { label: 'Automatización y riesgo', href: '#pub-risk' }] },
           { title: 'OCR para archivos históricos',
-            desc: 'Combinación de reconocimiento óptico de caracteres con modelos de lenguaje para transcribir, corregir e indexar documentos históricos manuscritos o deteriorados.',
-            note: 'Investigación aplicada en el LabSEC, 2024–2025.' }
+            desc: 'Combinación de reconocimiento óptico de caracteres con modelos de lenguaje para transcribir, corregir e indexar documentos históricos manuscritos o deteriorados, aplicada a los archivos del Registro Civil brasileño.',
+            rel: [{ label: 'OCR en el Registro Civil', href: '#pub-ocrrc' }] }
         ],
         pubTitle: 'Publicaciones',
         pubNote: (n) => n + ' publicaciones',
@@ -872,6 +887,8 @@
             desc: 'Reevaluación crítica de GAN-BERT para la clasificación de textos sensibles, centrada en las dinámicas de entrenamiento adversarial y la alineación de dominio en entornos con pocos datos anotados. Propone ajustes que mejoran la estabilidad y la generalización del modelo.' },
           risk: { venue: 'ICISS 2025, Information Systems Security, Springer LNCS vol. 16380, pp. 85–103',
             desc: 'Análisis de cómo los modelos Transformer están transformando la gestión de información sensible en las organizaciones, evaluando riesgos de automatización, sesgos de los modelos e implicaciones para el cumplimiento normativo y la privacidad en contextos institucionales críticos.' },
+          ocrrc: { venue: 'Registro Civil de Pessoas Naturais - As Novas Tecnologias a Serviço das Demandas Sociais, vol. 4, pp. 201–212, Thomson Reuters',
+            desc: 'Este capítulo (en portugués) investiga la viabilidad de la Inteligencia Artificial avanzada en la digitalización de los archivos históricos del Registro Civil brasileño, superando las limitaciones técnicas del OCR tradicional en documentos manuscritos o deteriorados. Propone el modelo conceptual “OCR Inteligente”, que integra Grandes Modelos de Lenguaje (LLMs) para la poscorrección semántica y utiliza la autenticación mediante IdRC como vector de contextualización para refinar el reconocimiento de antropónimos y topónimos. Además, analiza la conformidad de la tecnología para generar “sucesores digitales” válidos según el Decreto n.º 10.278/2020. Los resultados teóricos confirman la plausibilidad de la hipótesis y sitúan al OCR Inteligente como tecnología de infraestructura esencial para la modernización registral, la preservación de la memoria nacional y la seguridad jurídica digital.' },
           iara: { venue: 'ERCOMPRS 2020, SBC, p. 50',
             desc: 'Chatbot conversacional para recopilar, relacionar y difundir datos epidemiológicos sobre la COVID-19 en la región de Santa Cruz do Sul (RS), integrando fuentes de datos públicas en una interfaz accesible. Presentado en la I Escuela Regional de Computación de Rio Grande do Sul.' }
         },
